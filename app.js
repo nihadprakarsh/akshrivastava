@@ -23,7 +23,7 @@
         carouselInterval: 5000, // Adjusted for better user experience
         counterAnimationDuration: 2500,
         loadingDuration: 1500, // Faster loading hide
-        web3FormsAccessKey: "YOUR_ACCESS_KEY_HERE", // <-- IMPORTANT: REPLACE THIS KEY
+        web3FormsAccessKey: "f172d582-f61e-4dc1-ac3a-c144e252b0dd", // <-- IMPORTANT: REPLACE THIS KEY
         breakpoints: {
             mobile: 480,
             tablet: 768,
