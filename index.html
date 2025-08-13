@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Advocate Akhilesh Shrivastava - Expert Legal Representation with 25+ years experience in Supreme Court, Corporate Law, Criminal Defense, and Human Rights. Professional legal services across India.">
-    <meta name="keywords" content="advocate, lawyer, supreme court, corporate law, criminal defense, human rights, legal services, india">
+    <meta name="description" content="Advocate Akhilesh Shrivastava - Premier Legal Excellence with 20+ years experience in Supreme Court, Corporate Law, IBC Appeals, and Human Rights. Expert representation across India's highest courts.">
+    <meta name="keywords" content="advocate, lawyer, supreme court, corporate law, IBC appeals, companies act appeals, writ article 32, human rights, legal services, india">
     <meta name="author" content="Advocate Akhilesh Shrivastava">
-    <meta property="og:title" content="Advocate Akhilesh Shrivastava - Expert Legal Representation">
-    <meta property="og:description" content="25+ years of experience in Supreme Court litigation, Corporate Law, and Human Rights advocacy.">
+    <meta property="og:title" content="Advocate Akhilesh Shrivastava - Premier Legal Excellence">
+    <meta property="og:description" content="20+ years of experience in Supreme Court litigation, Corporate Law, IBC Appeals, and Human Rights advocacy.">
     <meta property="og:type" content="website">
-    <title>Advocate Akhilesh Shrivastava - Expert Legal Representation | Supreme Court & Corporate Law</title>
+    <title>Advocate Akhilesh Shrivastava - Premier Legal Excellence | Supreme Court & Corporate Law</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-animation">
+            <img src="assets/legal-access-logo.png" alt="Legal Access Logo" class="loading-logo">
+            <div class="loading-text">Loading Excellence...</div>
+        </div>
+    </div>
+
     <header class="header" id="header">
         <nav class="nav container">
             <div class="nav__brand">
-                <h2 class="nav__logo">Advocate Akhilesh Shrivastava</h2>
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <img src="assets/legal-access-logo.png" alt="Logo" class="header-logo">
+                    </div>
+                    <div class="logo-text">
+                        <h2 class="nav__logo">Advocate Akhilesh Shrivastava</h2>
+                        <span class="logo-tagline">Premier Legal Excellence</span>
+                    </div>
+                </div>
             </div>
             
             <div class="nav__menu" id="nav-menu">
@@ -30,6 +45,12 @@
                     </li>
                     <li class="nav__item">
                         <a href="#practice" class="nav__link">Practice Areas</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#team" class="nav__link">Legal Team</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#clients" class="nav__link">Major Clients</a>
                     </li>
                     <li class="nav__item">
                         <a href="#experience" class="nav__link">Experience</a>
@@ -59,80 +80,108 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
         <section class="hero" id="home">
+            <div class="hero-background">
+                <div class="hero-particles"></div>
+            </div>
             <div class="hero__container container">
                 <div class="hero__content">
-                    <h1 class="hero__title">Expert Legal Representation Across Supreme Court & High Courts</h1>
-                    <p class="hero__description">Distinguished legal practitioner with 25+ years of experience in Supreme Court litigation, High Court practice, and specialized tribunal proceedings.</p>
+                    <h1 class="hero__title">
+                        Unwavering Advocacy,
+                        <span class="highlight-text">Strategic Legal Counsel.</span>
+                    </h1>
+                    <p class="hero__description">
+                        With over two decades of distinguished practice before the Supreme Court and High Courts of India, I provide robust representation and strategic guidance to navigate your most complex legal challenges. My commitment is to deliver not just legal services, but decisive results.
+                    </p>
                     <div class="hero__cta">
-                        <button class="btn btn--primary btn--lg consultation-btn">Schedule Consultation</button>
-                        <a href="#practice" class="btn btn--outline btn--lg">Our Services</a>
+                        <button class="btn btn--primary btn--lg btn--glow consultation-btn">
+                            <span>Schedule Consultation</span>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <a href="#practice" class="btn btn--outline btn--lg btn--glass">Explore Practice Areas</a>
+                    </div>
+                     <div class="hero__stats">
+                        <div class="stat-card glass-morphism">
+                            <span class="stat-card__number" data-target="20">0</span>
+                            <span class="stat-card__unit">+</span>
+                            <p class="stat-card__label">Years Experience</p>
+                        </div>
+                        <div class="stat-card glass-morphism">
+                            <span class="stat-card__number" data-target="500">0</span>
+                            <span class="stat-card__unit">+</span>
+                            <p class="stat-card__label">Major Cases</p>
+                        </div>
+                        <div class="stat-card glass-morphism">
+                            <span class="stat-card__number" data-target="100">0</span>
+                            <span class="stat-card__unit">+</span>
+                            <p class="stat-card__label">Corporate Clients</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="hero__stats">
-                    <div class="stat-card">
-                        <span class="stat-card__number" data-target="25">0</span>
-                        <span class="stat-card__unit">+</span>
-                        <p class="stat-card__label">Years Experience</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-card__number" data-target="100">0</span>
-                        <span class="stat-card__unit">+</span>
-                        <p class="stat-card__label">Human Rights Cases</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-card__number" data-target="5">0</span>
-                        <span class="stat-card__unit"></span>
-                        <p class="stat-card__label">High Courts</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-card__number" data-target="500">0</span>
-                        <span class="stat-card__unit">+</span>
-                        <p class="stat-card__label">Cases Won</p>
-                    </div>
+                <div class="hero-image-container">
+                    <img src="assets/advocate-photo.jpg" alt="Advocate Akhilesh Shrivastava" class="hero-photo">
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
         <section class="about" id="about">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section__title">About Advocate Akhilesh Shrivastava</h2>
-                    <p class="section__subtitle">A distinguished legal practitioner with extensive experience in Supreme Court litigation, High Court practice, and specialized tribunal proceedings.</p>
+                    <p class="section__subtitle">Distinguished legal practitioner with extensive experience in Supreme Court litigation, High Court practice, and specialized tribunal proceedings.</p>
                 </div>
                 
                 <div class="about__content">
                     <div class="about__info">
-                        <h3>Professional Excellence</h3>
-                        <p>With over 25 years of dedicated legal practice, I specialize in providing expert representation across multiple jurisdictions including the Supreme Court of India, various High Courts, and specialized tribunals.</p>
-                        <p>My practice encompasses a wide range of legal domains including corporate law, constitutional matters, criminal defense, and human rights advocacy, ensuring comprehensive legal solutions for all clients.</p>
+                        <h3>Professional Excellence Since 2004</h3>
+                        <p>With over 20 years of dedicated legal practice, I specialize in providing expert representation across multiple jurisdictions including the Supreme Court of India, various High Courts, and specialized tribunals such as NCLT/NCLAT.</p>
+                        <p>My practice encompasses comprehensive legal solutions including Supreme Court matters, IBC proceedings, Companies Act appeals, Constitutional law including Writ under Article 32, criminal defense, and human rights advocacy.</p>
+                        
+                        <div class="highlights-grid">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🏛️</div>
+                                <h4>Supreme Court Practice</h4>
+                                <p>Specialized practice in SLPs, Constitutional matters, and Appeals</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">📋</div>
+                                <h4>IBC & Companies Act</h4>
+                                <p>Expert in IBC proceedings and Companies Act appeals</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">⚖️</div>
+                                <h4>Constitutional Law</h4>
+                                <p>Writs under Article 32 and Constitutional matters</p>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">✊</div>
+                                <h4>Human Rights</h4>
+                                <p>Extensive NHRC practice and human rights advocacy</p>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="credentials-grid">
-                        <div class="credential-card">
+                        <div class="credential-card glass-morphism">
                             <div class="credential-card__icon">🎓</div>
                             <h4>LL.B (First Rank)</h4>
                             <p>Ranchi University</p>
                             <span class="credential-card__year">1990-1993</span>
                         </div>
-                        <div class="credential-card">
+                        <div class="credential-card glass-morphism">
                             <div class="credential-card__icon">📊</div>
                             <h4>ICSI</h4>
                             <p>Institute of Company Secretaries</p>
                             <span class="credential-card__year">1997-2002</span>
                         </div>
-                        <div class="credential-card">
+                        <div class="credential-card glass-morphism">
                             <div class="credential-card__icon">💼</div>
                             <h4>ICAI</h4>
                             <p>Institute of Cost Accountants</p>
                             <span class="credential-card__year">1991-1995</span>
                         </div>
-                        <div class="credential-card">
+                        <div class="credential-card glass-morphism">
                             <div class="credential-card__icon">🔬</div>
                             <h4>B.Sc (Hons.) Chemistry</h4>
                             <p>Ranchi University</p>
@@ -143,7 +192,6 @@
             </div>
         </section>
 
-        <!-- Practice Areas Section -->
         <section class="practice" id="practice">
             <div class="container">
                 <div class="section-header">
@@ -152,145 +200,344 @@
                 </div>
                 
                 <div class="practice-grid">
-                    <div class="practice-card">
+                    <div class="practice-card premium-card">
                         <div class="practice-card__icon">⚖️</div>
                         <h3>Supreme Court Practice</h3>
-                        <p>Comprehensive representation in Special Leave Petitions, Habeas Corpus, Appeals, and Constitutional matters before the Hon'ble Supreme Court of India.</p>
+                        <p>Comprehensive representation in Special Leave Petitions, Constitutional matters, Appeals, and Writ under Article 32 before the Hon'ble Supreme Court of India.</p>
                         <ul class="practice-card__services">
                             <li>Special Leave Petitions (SLPs)</li>
-                            <li>Habeas Corpus Petitions</li>
+                            <li>Writ under Article 32</li>
                             <li>Appeals from High Courts</li>
-                            <li>Bail Applications</li>
                             <li>Constitutional Matters</li>
+                            <li>Habeas Corpus Petitions</li>
                         </ul>
                     </div>
                     
-                    <div class="practice-card">
+                    <div class="practice-card premium-card">
                         <div class="practice-card__icon">🏢</div>
                         <h3>Corporate & Company Law</h3>
                         <p>Expert representation in corporate disputes, IBC matters, NCLT/NCLAT proceedings, and complex company law litigation.</p>
                         <ul class="practice-card__services">
-                            <li>Companies Act 2013 matters</li>
-                            <li>IBC 2016 proceedings</li>
-                            <li>NCLT & NCLAT representation</li>
-                            <li>Oppression & Mismanagement</li>
-                            <li>Corporate restructuring</li>
+                            <li>Companies Act Appeals</li>
+                            <li>IBC Proceedings</li>
+                            <li>NCLT & NCLAT Representation</li>
+                            <li>Corporate Restructuring</li>
+                            <li>Oppression & Mismanagement Cases</li>
                         </ul>
                     </div>
                     
-                    <div class="practice-card">
+                    <div class="practice-card premium-card">
                         <div class="practice-card__icon">📜</div>
-                        <h3>Constitutional & Civil Law</h3>
-                        <p>Specialized practice in constitutional law, writ petitions under Article 226, and complex civil litigation matters.</p>
+                        <h3>Appeals & Appellate Practice</h3>
+                        <p>Specialized appellate practice including Companies Act & IBC appeals across Supreme Court, High Courts, and specialized tribunals.</p>
                         <ul class="practice-card__services">
-                            <li>Writ Petitions under Article 226</li>
-                            <li>Constitutional matters</li>
-                            <li>Mandamus proceedings</li>
-                            <li>Civil litigation</li>
-                            <li>Administrative law</li>
+                            <li>Companies Act Appeals</li>
+                            <li>IBC Appeals</li>
+                            <li>High Court Appeals</li>
+                            <li>Supreme Court Appeals</li>
+                            <li>Tribunal Appeals</li>
                         </ul>
                     </div>
                     
-                    <div class="practice-card">
+                    <div class="practice-card premium-card">
                         <div class="practice-card__icon">🛡️</div>
                         <h3>Criminal Law & Defense</h3>
                         <p>Strategic criminal defense including quashing of proceedings, bail applications, and high-profile criminal matters.</p>
                         <ul class="practice-card__services">
-                            <li>Quashing of criminal proceedings</li>
-                            <li>Bail applications</li>
-                            <li>Criminal trial defense</li>
-                            <li>Appeals</li>
-                            <li>White-collar crimes</li>
+                            <li>Quashing of Proceedings</li>
+                            <li>Bail Applications</li>
+                            <li>Criminal Appeals</li>
+                            <li>White-collar Crime Defense</li>
+                            <li>CBI/ED Matters</li>
                         </ul>
                     </div>
                     
-                    <div class="practice-card">
+                    <div class="practice-card premium-card">
                         <div class="practice-card__icon">💰</div>
                         <h3>Tax & Excise Law</h3>
                         <p>Comprehensive representation in tax disputes, excise matters, and proceedings before CESTAT and tax tribunals.</p>
                         <ul class="practice-card__services">
-                            <li>Income Tax matters</li>
-                            <li>Central Excise disputes</li>
-                            <li>Service Tax litigation</li>
-                            <li>Customs matters</li>
-                            <li>CESTAT proceedings</li>
+                            <li>Income Tax Appeals</li>
+                            <li>CESTAT Proceedings</li>
+                            <li>Service Tax Matters</li>
+                            <li>Customs Disputes</li>
+                            <li>GST Litigation</li>
                         </ul>
                     </div>
                     
-                    <div class="practice-card">
+                    <div class="practice-card premium-card">
                         <div class="practice-card__icon">✊</div>
-                        <h3>Human Rights Law</h3>
-                        <p>Extensive experience in human rights advocacy with over 100 cases handled before NHRC and other forums.</p>
+                        <h3>Human Rights & PIL</h3>
+                        <p>Extensive human rights advocacy with specialized focus on NHRC matters and public interest litigation.</p>
                         <ul class="practice-card__services">
-                            <li>NHRC complaints</li>
-                            <li>Human rights violations</li>
-                            <li>Public interest litigation</li>
-                            <li>Civil liberties</li>
-                            <li>Constitutional rights protection</li>
+                            <li>NHRC Complaints</li>
+                            <li>Public Interest Litigation</li>
+                            <li>Human Rights Violations</li>
+                            <li>Constitutional Rights</li>
+                            <li>Civil Liberties</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
+        <section class="team" id="team">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Our Legal Team</h2>
+                    <p class="section__subtitle">Distinguished professionals with exceptional expertise and dedication</p>
+                </div>
+                
+                <div class="swiper-container team-carousel">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="team-card premium-card">
+                                <div class="team-card__image">
+                                    <div class="team-avatar">
+                                        <div class="avatar-placeholder">
+                                            <div class="avatar-icon">👨‍💼</div>
+                                        </div>
+                                    </div>
+                                    <div class="team-card__badge">Founding Partner</div>
+                                </div>
+                                <div class="team-card__info">
+                                    <h3>Advocate Akhilesh Shrivastava</h3>
+                                    <p class="team-position">Founding Partner</p>
+                                    <p class="team-experience">20+ Years Experience</p>
+                                    <div class="team-qualifications">
+                                        <h4>Qualifications:</h4>
+                                        <ul>
+                                            <li>LL.B (First Rank) - Ranchi University</li>
+                                            <li>ICSI - Institute of Company Secretaries</li>
+                                            <li>ICAI - Institute of Cost Accountants</li>
+                                            <li>B.Sc (Hons.) Chemistry</li>
+                                        </ul>
+                                    </div>
+                                    <div class="team-specializations">
+                                        <h4>Specializations:</h4>
+                                        <div class="specialization-tags">
+                                            <span class="tag">Supreme Court Practice</span>
+                                            <span class="tag">Corporate Law</span>
+                                            <span class="tag">Constitutional Matters</span>
+                                            <span class="tag">Human Rights</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-courts">
+                                        <h4>Courts:</h4>
+                                        <div class="court-list">
+                                            <div class="court-item">🏛️ Supreme Court of India</div>
+                                            <div class="court-item">🏛️ Calcutta High Court</div>
+                                            <div class="court-item">🏛️ Ranchi High Court</div>
+                                            <div class="court-item">🏛️ Guwahati High Court</div>
+                                            <div class="court-item">⚖️ NCLT/NCLAT</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team-card premium-card team-placeholder">
+                                <div class="team-card__image">
+                                    <div class="team-avatar">
+                                        <div class="avatar-placeholder">
+                                            <div class="avatar-icon">👩‍💼</div>
+                                        </div>
+                                    </div>
+                                    <div class="team-card__badge">Associate</div>
+                                </div>
+                                <div class="team-card__info">
+                                    <h3>Senior Associate</h3>
+                                    <p class="team-position">Corporate Law Specialist</p>
+                                    <p class="team-description">Specialized expertise in corporate litigation and compliance matters</p>
+                                    <div class="join-team-cta">
+                                        <button class="btn btn--outline btn--sm">Join Our Team</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="team-card premium-card team-placeholder">
+                                <div class="team-card__image">
+                                    <div class="team-avatar">
+                                        <div class="avatar-placeholder">
+                                            <div class="avatar-icon">👨‍💼</div>
+                                        </div>
+                                    </div>
+                                    <div class="team-card__badge">Associate</div>
+                                </div>
+                                <div class="team-card__info">
+                                    <h3>Junior Associate</h3>
+                                    <p class="team-position">Research & Documentation</p>
+                                    <p class="team-description">Supporting complex legal research and case documentation</p>
+                                    <div class="join-team-cta">
+                                        <button class="btn btn--outline btn--sm">Join Our Team</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients" id="clients">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section__title">Major Clients</h2>
+                    <p class="section__subtitle">Trusted by leading corporations and organizations across diverse sectors</p>
+                </div>
+                
+                <div class="swiper-container clients-carousel">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="client-card glass-morphism">
+                                <div class="client-logo">🏗️</div>
+                                <h4>Samay Construction Pvt. Ltd.</h4>
+                                <p class="client-sector">Construction</p>
+                                <span class="client-since">Since 2025</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-card glass-morphism">
+                                <div class="client-logo">🌾</div>
+                                <h4>ESSES AGRO BIOTICS PVT LTD</h4>
+                                <p class="client-sector">Agriculture</p>
+                                <span class="client-since">Since 2024</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-card glass-morphism">
+                                <div class="client-logo">🏢</div>
+                                <h4>MAYURAKSHI ENTERPRISES</h4>
+                                <p class="client-sector">Enterprise</p>
+                                <span class="client-since">Since 2024</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-card glass-morphism">
+                                <div class="client-logo">💰</div>
+                                <h4>Sahara Investors</h4>
+                                <p class="client-sector">Finance - Supreme Court</p>
+                                <span class="client-since">Since 2024</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-card glass-morphism">
+                                <div class="client-logo">🚗</div>
+                                <h4>Birla Tyres</h4>
+                                <p class="client-sector">Manufacturing</p>
+                                <span class="client-since">Since 2023</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-card glass-morphism">
+                                <div class="client-logo">🏥</div>
+                                <h4>Paramount Hospital Pvt. Ltd.</h4>
+                                <p class="client-sector">Healthcare</p>
+                                <span class="client-since">Since 2023</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-card glass-morphism">
+                                <div class="client-logo">🏭</div>
+                                <h4>Incab Industries Limited</h4>
+                                <p class="client-sector">Industrial - NCLT/NCLAT</p>
+                                <span class="client-since">Since 2019</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-card glass-morphism">
+                                <div class="client-logo">🍃</div>
+                                <h4>Tezalpatti Tea Private Ltd</h4>
+                                <p class="client-sector">Tea Industry</p>
+                                <span class="client-since">Since 2020</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-card glass-morphism">
+                                <div class="client-logo">🏢</div>
+                                <h4>TATA Group Companies</h4>
+                                <p class="client-sector">Conglomerate</p>
+                                <span class="client-since">Since 2006</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="client-card glass-morphism">
+                                <div class="client-logo">🏦</div>
+                                <h4>State Bank of India</h4>
+                                <p class="client-sector">Banking</p>
+                                <span class="client-since">Since 2006</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                
+                <div class="client-stats">
+                    <div class="client-stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Corporate Clients</span>
+                    </div>
+                    <div class="client-stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Industry Sectors</span>
+                    </div>
+                    <div class="client-stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Years of Trust</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="experience" id="experience">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section__title">Professional Journey</h2>
-                    <p class="section__subtitle">25+ years of dedicated legal practice and excellence</p>
+                    <p class="section__subtitle">20+ years of dedicated legal practice and excellence</p>
                 </div>
                 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
-                        <div class="timeline-content">
+                        <div class="timeline-content glass-morphism">
                             <span class="timeline-year">2014-Present</span>
                             <h3>Supreme Court Practice</h3>
-                            <p>Commenced practice at Supreme Court of India. Handling SLPs, Appeals, Habeas Corpus, and Constitutional matters.</p>
+                            <p>Advanced practice in Supreme Court of India handling SLPs, Constitutional matters, Appeals, and Writ under Article 32.</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
-                        <div class="timeline-content">
+                        <div class="timeline-content glass-morphism">
                             <span class="timeline-year">2010-2014</span>
-                            <h3>High Court Practice</h3>
-                            <p>Extensive practice across Calcutta, Bombay, Guwahati, and Ranchi High Courts in diverse legal matters.</p>
+                            <h3>Multi-High Court Practice</h3>
+                            <p>Extensive practice across Calcutta, Ranchi, Guwahati, and Bombay High Courts in diverse legal matters.</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2005-2010</span>
-                            <h3>NCLT & NCLAT Specialist</h3>
-                            <p>Specialized practice in Companies Act 2013, IBC 2016, and corporate law matters before NCLT/NCLAT.</p>
+                        <div class="timeline-content glass-morphism">
+                            <span class="timeline-year">2004-2010</span>
+                            <h3>Corporate Law Specialist</h3>
+                            <p>Specialized practice in company law, NCLT matters, IBC proceedings, and corporate consultancy.</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">2000-2005</span>
+                        <div class="timeline-content glass-morphism">
+                            <span class="timeline-year">2004</span>
                             <h3>A.K. Shrivastava & Associates</h3>
-                            <p>Leading legal consultancy firm providing comprehensive legal services to corporate and individual clients.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-year">1998-2000</span>
-                            <h3>Human Rights Advocacy</h3>
-                            <p>Over 100 human rights cases handled before NHRC and other forums over 25 years of practice.</p>
+                            <p>Established leading legal consultancy providing comprehensive corporate and litigation services.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
         <section class="testimonials" id="testimonials">
             <div class="container">
                 <div class="section-header">
@@ -299,47 +546,47 @@
                 </div>
                 
                 <div class="testimonials-carousel" id="testimonials-carousel">
-                    <div class="testimonial-card active">
+                    <div class="testimonial-card active glass-morphism">
                         <div class="testimonial-stars">
                             <span>★★★★★</span>
                         </div>
-                        <p class="testimonial-text">"Advocate Shrivastava's expertise in corporate law and his strategic approach in our NCLT matter resulted in a favorable outcome. His deep understanding of company law is exceptional."</p>
+                        <p class="testimonial-text">"Advocate Shrivastava's expertise in our Supreme Court matter was exceptional. His strategic approach and deep understanding of constitutional law resulted in a favorable outcome for Sahara Investors."</p>
                         <div class="testimonial-author">
-                            <strong>Incab Industries Ltd.</strong>
-                            <span>Corporate Law - NCLT/NCLAT</span>
+                            <strong>Sahara Investors</strong>
+                            <span>Supreme Court Constitutional Matter</span>
                         </div>
                     </div>
                     
-                    <div class="testimonial-card">
+                    <div class="testimonial-card glass-morphism">
                         <div class="testimonial-stars">
                             <span>★★★★★</span>
                         </div>
-                        <p class="testimonial-text">"His representation in my criminal writ petition before Ranchi High Court and subsequently before NIA court demonstrated his exceptional criminal law expertise and dedication."</p>
+                        <p class="testimonial-text">"His representation in our NCLT proceedings was outstanding. The complex corporate restructuring was handled with remarkable skill and attention to detail."</p>
                         <div class="testimonial-author">
-                            <strong>Raja Peter (Ex-MLA)</strong>
-                            <span>Criminal Law Defense</span>
+                            <strong>Incab Industries Limited</strong>
+                            <span>NCLT Corporate Restructuring</span>
                         </div>
                     </div>
                     
-                    <div class="testimonial-card">
+                    <div class="testimonial-card glass-morphism">
                         <div class="testimonial-stars">
                             <span>★★★★★</span>
                         </div>
-                        <p class="testimonial-text">"Advocate Shrivastava successfully represented us from CLB through NCLT, NCLAT, and finally at the Supreme Court. His persistence and legal acumen are remarkable."</p>
+                        <p class="testimonial-text">"Advocate Shrivastava successfully handled our multi-jurisdictional appeal from CLB through NCLT, NCLAT, and finally at the Supreme Court. His persistence and legal acumen are remarkable."</p>
                         <div class="testimonial-author">
-                            <strong>Tea Company Executive</strong>
+                            <strong>MEGHALAYA FINLEASE PRIVATE LIMITED</strong>
                             <span>Supreme Court Appeal</span>
                         </div>
                     </div>
                     
-                    <div class="testimonial-card">
+                    <div class="testimonial-card glass-morphism">
                         <div class="testimonial-stars">
                             <span>★★★★★</span>
                         </div>
-                        <p class="testimonial-text">"Having handled over 100 human rights cases, his expertise in this field is unmatched. He secured justice for our human rights violation case with great dedication."</p>
+                        <p class="testimonial-text">"His expertise in tax matters and representation before CESTAT helped us achieve a favorable resolution in complex excise disputes."</p>
                         <div class="testimonial-author">
-                            <strong>Human Rights Activist</strong>
-                            <span>NHRC Case</span>
+                            <strong>Prefabs Bihar Private Limited</strong>
+                            <span>CESTAT Tax Matter</span>
                         </div>
                     </div>
                 </div>
@@ -353,7 +600,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section class="contact" id="contact">
             <div class="container">
                 <div class="section-header">
@@ -363,76 +609,85 @@
                 
                 <div class="contact-content">
                     <div class="contact-info">
-                        <div class="contact-item">
+                        <div class="contact-item glass-morphism">
+                            <div class="contact-icon">🏢</div>
                             <h3>Primary Office</h3>
-                            <p>7A, NPS Chamber, Kiran Shankar Ray Road<br>Kolkata - 700001, West Bengal</p>
+                            <p>Dream Heights<br>Kolkata, West Bengal</p>
                         </div>
                         
-                        <div class="contact-item">
+                        <div class="contact-item glass-morphism">
+                            <div class="contact-icon">🏢</div>
                             <h3>Secondary Office</h3>
-                            <p>8A, Ninth Floor, Commerce House<br>2A, Ganesh Chandra Avenue<br>Kolkata - 700013, West Bengal</p>
+                            <p>Siddha Weston<br>Kolkata, West Bengal</p>
                         </div>
                         
-                        <div class="contact-item">
+                        <div class="contact-item glass-morphism">
+                            <div class="contact-icon">📞</div>
                             <h3>Contact Details</h3>
                             <p><strong>Phone:</strong> <a href="tel:+919830076806">+91-9830076806</a></p>
-                            <p><strong>Email:</strong> <a href="mailto:info@legalaccess.in">info@legalaccess.in</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:info.legalaccess.in">info.legalaccess.in</a></p>
                         </div>
                         
-                        <div class="contact-item">
+                        <div class="contact-item glass-morphism">
+                            <div class="contact-icon">⏰</div>
                             <h3>Office Hours</h3>
                             <p>Monday - Friday: 10:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
                         </div>
                     </div>
                     
-                    <form class="contact-form" id="contact-form">
+                    <form class="contact-form glass-morphism" id="contact-form">
                         <div class="form-group">
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="Full Name *">
                             <label for="name" class="form-label">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="Email Address *">
                             <label for="email" class="form-label">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control">
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone Number">
+                             <label for="phone" class="form-label">Phone Number</label>
                         </div>
                         
                         <div class="form-group">
-                            <label for="legal-area" class="form-label">Legal Area</label>
-                            <select id="legal-area" name="legal-area" class="form-control">
-                                <option value="">Select Practice Area</option>
+                            <select id="legal-area" name="legal-area" class="form-control" required>
+                                <option value="" disabled selected>Select Practice Area *</option>
                                 <option value="supreme-court">Supreme Court Practice</option>
                                 <option value="corporate">Corporate & Company Law</option>
-                                <option value="constitutional">Constitutional & Civil Law</option>
+                                <option value="appeals">Appeals & Appellate Practice</option>
                                 <option value="criminal">Criminal Law & Defense</option>
                                 <option value="tax">Tax & Excise Law</option>
-                                <option value="human-rights">Human Rights Law</option>
+                                <option value="human-rights">Human Rights & PIL</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message" class="form-label">Message *</label>
                             <textarea id="message" name="message" class="form-control" rows="5" required placeholder="Please describe your legal matter..."></textarea>
+                             <label for="message" class="form-label">Message *</label>
                         </div>
                         
-                        <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                        <button type="submit" class="btn btn--primary btn--full-width btn--glow">
+                            <span>Send Message</span>
+                            <div class="btn-particles"></div>
+                        </button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Advocate Akhilesh Shrivastava</h3>
-                    <p>Expert Legal Representation with 25+ years of experience in Supreme Court, Corporate Law, and Human Rights advocacy.</p>
+                    <p>Premier Legal Excellence with 20+ years of experience in Supreme Court, Corporate Law, IBC Appeals, and Human Rights advocacy.</p>
+                    <div class="footer-theme-toggle">
+                        <span>🌙</span>
+                        <span>Theme Toggle Available</span>
+                    </div>
                 </div>
                 
                 <div class="footer-section">
@@ -440,6 +695,8 @@
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#practice">Practice Areas</a></li>
+                        <li><a href="#team">Legal Team</a></li>
+                        <li><a href="#clients">Major Clients</a></li>
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -450,15 +707,20 @@
                     <ul>
                         <li>Supreme Court Practice</li>
                         <li>Corporate & Company Law</li>
+                        <li>Appeals & Appellate Practice</li>
                         <li>Criminal Law & Defense</li>
-                        <li>Human Rights Law</li>
+                        <li>Human Rights & PIL</li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <p>Phone: <a href="tel:+919830076806">+91-9830076806</a></p>
-                    <p>Email: <a href="mailto:info@legalaccess.in">info@legalaccess.in</a></p>
+                    <p>Email: <a href="mailto:info.legalaccess.in">info.legalaccess.in</a></p>
+                    <div class="footer-offices">
+                        <p><strong>Dream Heights</strong> | <strong>Siddha Weston</strong></p>
+                        <p>Kolkata, West Bengal</p>
+                    </div>
                 </div>
             </div>
             
@@ -469,50 +731,52 @@
         </div>
     </footer>
 
-    <!-- Consultation Modal -->
     <div class="modal hidden" id="consultation-modal">
-        <div class="modal-content">
+        <div class="modal-content glass-morphism">
             <button class="modal-close" id="modal-close">&times;</button>
             <h3>Schedule Consultation</h3>
             <form class="modal-form" id="consultation-form">
                 <div class="form-group">
+                    <input type="text" id="consultation-name" name="name" class="form-control" required placeholder="Full Name *">
                     <label for="consultation-name" class="form-label">Full Name *</label>
-                    <input type="text" id="consultation-name" name="name" class="form-control" required>
                 </div>
                 
                 <div class="form-group">
+                    <input type="email" id="consultation-email" name="email" class="form-control" required placeholder="Email Address *">
                     <label for="consultation-email" class="form-label">Email Address *</label>
-                    <input type="email" id="consultation-email" name="email" class="form-control" required>
                 </div>
                 
                 <div class="form-group">
+                    <input type="tel" id="consultation-phone" name="phone" class="form-control" required placeholder="Phone Number *">
                     <label for="consultation-phone" class="form-label">Phone Number *</label>
-                    <input type="tel" id="consultation-phone" name="phone" class="form-control" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="consultation-area" class="form-label">Legal Matter *</label>
                     <select id="consultation-area" name="legal-area" class="form-control" required>
-                        <option value="">Select Practice Area</option>
+                        <option value="" disabled selected>Legal Matter *</option>
                         <option value="supreme-court">Supreme Court Practice</option>
                         <option value="corporate">Corporate & Company Law</option>
-                        <option value="constitutional">Constitutional & Civil Law</option>
+                        <option value="appeals">Appeals & Appellate Practice</option>
                         <option value="criminal">Criminal Law & Defense</option>
                         <option value="tax">Tax & Excise Law</option>
-                        <option value="human-rights">Human Rights Law</option>
+                        <option value="human-rights">Human Rights & PIL</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
+                    <textarea id="consultation-message" name="message" class="form-control" rows="4" required placeholder="Brief Description *"></textarea>
                     <label for="consultation-message" class="form-label">Brief Description *</label>
-                    <textarea id="consultation-message" name="message" class="form-control" rows="4" required placeholder="Please provide a brief description of your legal matter..."></textarea>
                 </div>
                 
-                <button type="submit" class="btn btn--primary btn--full-width">Schedule Consultation</button>
+                <button type="submit" class="btn btn--primary btn--full-width btn--glow">
+                    <span>Schedule Consultation</span>
+                    <div class="btn-particles"></div>
+                </button>
             </form>
         </div>
     </div>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
