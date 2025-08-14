@@ -179,11 +179,15 @@
         }
     };
 
-    // Testimonials Carousel Module - FIX
+    // Testimonials Carousel Module
     const TestimonialsCarousel = {
         init() {
-            const slides = Utils.$$('.testimonial-card');
-            const navButtons = Utils.$$('.testimonial-nav-btn');
+            const carousel = Utils.$('#testimonials-carousel');
+            if (!carousel) return;
+            const slides = Utils.$$('.testimonial-card', carousel);
+            const navContainer = carousel.nextElementSibling;
+            if (!navContainer) return;
+            const navButtons = Utils.$$('.testimonial-nav-btn', navContainer);
             if (slides.length <= 1) return;
 
             let currentSlide = 0;
@@ -210,8 +214,8 @@
                 });
             });
             
-            Utils.$('#testimonials-carousel').addEventListener('mouseenter', () => clearInterval(autoplayTimer));
-            Utils.$('#testimonials-carousel').addEventListener('mouseleave', startAutoplay);
+            carousel.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+            carousel.addEventListener('mouseleave', startAutoplay);
 
             showSlide(0);
             startAutoplay();
@@ -229,6 +233,10 @@
                 loop: true,
                 grabCursor: true,
                 spaceBetween: 20,
+                navigation: {
+                    nextEl: '.team-carousel-button-next',
+                    prevEl: '.team-carousel-button-prev',
+                },
                 pagination: { el: '.team-carousel .swiper-pagination', clickable: true },
                 breakpoints: {
                     320: { slidesPerView: 1, spaceBetween: 20 },
@@ -263,8 +271,9 @@
         attachListener(formElement) {
             formElement.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                if (AppConfig.web3FormsAccessKey === "YOUR_ACCESS_KEY_HERE") {
-                    alert("Please replace 'YOUR_ACCESS_KEY_HERE' in app.js with your Web3Forms access key.");
+                // FIX: Removed check for the specific key, now only checks for the placeholder.
+                if (AppConfig.web3FormsAccessKey === "YOUR_ACCESS_KEY_HERE" || !AppConfig.web3FormsAccessKey) {
+                    alert("Please configure the Web3Forms access key in app.js.");
                     return;
                 }
 
