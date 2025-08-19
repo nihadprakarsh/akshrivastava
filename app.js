@@ -179,11 +179,15 @@
         }
     };
 
-    // Testimonials Carousel Module - FIX
+    // Testimonials Carousel Module
     const TestimonialsCarousel = {
         init() {
-            const slides = Utils.$$('.testimonial-card');
-            const navButtons = Utils.$$('.testimonial-nav-btn');
+            const carousel = Utils.$('#testimonials-carousel');
+            if (!carousel) return;
+            const slides = Utils.$$('.testimonial-card', carousel);
+            const navContainer = carousel.nextElementSibling;
+            if (!navContainer) return;
+            const navButtons = Utils.$$('.testimonial-nav-btn', navContainer);
             if (slides.length <= 1) return;
 
             let currentSlide = 0;
@@ -210,8 +214,8 @@
                 });
             });
             
-            Utils.$('#testimonials-carousel').addEventListener('mouseenter', () => clearInterval(autoplayTimer));
-            Utils.$('#testimonials-carousel').addEventListener('mouseleave', startAutoplay);
+            carousel.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+            carousel.addEventListener('mouseleave', startAutoplay);
 
             showSlide(0);
             startAutoplay();
@@ -226,9 +230,13 @@
                 return;
             }
             new Swiper('.team-carousel', {
-                loop: true,
+                loop: true, // Re-enabled loop as the button fix makes it compatible
                 grabCursor: true,
-                spaceBetween: 20,
+                spaceBetween: 30,
+                navigation: {
+                    nextEl: '.team-carousel-button-next',
+                    prevEl: '.team-carousel-button-prev',
+                },
                 pagination: { el: '.team-carousel .swiper-pagination', clickable: true },
                 breakpoints: {
                     320: { slidesPerView: 1, spaceBetween: 20 },
@@ -263,8 +271,8 @@
         attachListener(formElement) {
             formElement.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                if (AppConfig.web3FormsAccessKey === "YOUR_ACCESS_KEY_HERE") {
-                    alert("Please replace 'YOUR_ACCESS_KEY_HERE' in app.js with your Web3Forms access key.");
+                if (AppConfig.web3FormsAccessKey === "YOUR_ACCESS_KEY_HERE" || !AppConfig.web3FormsAccessKey) {
+                    alert("Please configure the Web3Forms access key in app.js.");
                     return;
                 }
 
@@ -328,6 +336,23 @@
         }
     };
     
+    // Card Flipper Module (FIXED)
+    const CardFlipper = {
+        init() {
+            // Using event delegation on the document for robustness.
+            // This ensures the click works even on slides cloned by Swiper.
+            document.addEventListener('click', (e) => {
+                const flipButton = e.target.closest('.js-flip-button');
+                if (flipButton) {
+                    const teamCard = flipButton.closest('.team-card');
+                    if (teamCard) {
+                        teamCard.classList.toggle('is-flipped');
+                    }
+                }
+            });
+        }
+    };
+
     // Scroll Animations Module
     const ScrollAnimations = {
         init() {
@@ -356,6 +381,7 @@
             SwiperCarousels,
             Modal,
             FormHandler,
+            CardFlipper,
             ScrollAnimations
         ],
         init() {
