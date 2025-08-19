@@ -2254,28 +2254,30 @@ section {
 .team-card__back-header .team-card__name {
     color: var(--color-primary);
 }
-
 .team-card__back-body {
     flex-grow: 1;
-    font-size: var(--font-size-sm);
-    line-height: 1.6;
+    font-size: var(--font-size-base); /* ⬆️ increase from sm → base */
+    line-height: 1.7;                 /* slight bump for readability */
     display: flex;
     flex-direction: column;
-    gap: var(--space-12); /* ✅ consistent spacing between all items */
+    gap: var(--space-12);
 }
 
 .team-card__back-body p {
     color: var(--color-text-secondary);
-    margin: 0; /* ✅ remove bottom margin, gap handles spacing */
+    margin: 0;
+    font-size: var(--font-size-base); /* match body text */
 }
 
 .team-card__back-body .team-card__info-item {
-    margin: 0; /* ✅ remove margin, gap handles spacing */
+    margin: 0;
+    font-size: var(--font-size-base); /* keep info consistent */
 }
 
 .team-card__back-body strong {
     color: var(--color-text);
-    font-weight: var(--font-weight-semibold); /* ✅ makes labels stand out */
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-md); /* ✅ slightly larger for labels */
 }
 
 .team-card__back-footer {
