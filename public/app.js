@@ -37,9 +37,9 @@
       });
     },
 
+    // 🔧 FIXED: Always default to LIGHT unless user explicitly chose
     getTheme() {
-      return localStorage.getItem('theme') ||
-        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      return localStorage.getItem('theme') || 'light';
     },
 
     setTheme(theme) {
@@ -136,6 +136,8 @@
       btn.addEventListener('click', () =>
         apply(Utils.getTheme() === 'dark' ? 'light' : 'dark')
       );
+
+      // 🔧 Default is now LIGHT
       apply(Utils.getTheme());
     }
   };
