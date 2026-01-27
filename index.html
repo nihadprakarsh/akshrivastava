@@ -17,7 +17,7 @@
       <div class="cursor-light-effect"></div>
       <div class="loading-screen" id="loading-screen">
          <div class="loading-animation">
-            <img src="assets/logo.png" alt="Legal Access Logo" class="loading-logo">
+            <img src="assets/logo.png" alt="Legal Access Logo" class="loading-logo" loading="lazy">
             <div class="loading-text">Welcome to Legal Access</div>
          </div>
       </div>
@@ -26,7 +26,7 @@
             <div class="nav__brand">
                <div class="logo-container">
                   <div class="logo-icon">
-                     <img src="assets/logo.png" alt="Logo" class="header-logo">
+                     <img src="assets/logo.png" alt="Logo" class="header-logo" loading="lazy">
                   </div>
                   <div class="logo-text">
                      <h2 class="nav__logo">Legal Access - Layman's Law</h2>
@@ -53,6 +53,9 @@
                   </li>
                   <li class="nav__item">
                      <a href="#experience" class="nav__link">Experience</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#notable-cases" class="nav__link">Notable Cases</a>
                   </li>
                   <li class="nav__item">
                      <a href="#testimonials" class="nav__link">Testimonials</a>
@@ -111,7 +114,7 @@
                   </div>
                </div>
                <div class="hero-image-container">
-                  <img src="assets/logo.png" alt="Advocate Akhilesh Shrivastava" class="hero-photo">
+                  <img src="assets/logo.png" alt="Advocate Akhilesh Shrivastava" class="hero-photo" loading="lazy">
                </div>
             </div>
          </section>
@@ -648,6 +651,828 @@
                </div>
             </div>
          </section>
+         <section class="notable-cases" id="notable-cases">
+            <div class="container">
+               <div class="section-header">
+                  <h2 class="section__title">Notable Cases</h2>
+                  <p class="section__subtitle">
+                     A selection of landmark and high-impact matters argued across India’s highest judicial forums
+                  </p>
+               </div>
+               <div class="case-filters">
+                  <button class="case-filter active" data-filter="all">All</button>
+                  <button class="case-filter" data-filter="supreme">Supreme Court</button>
+                  <button class="case-filter" data-filter="highcourt">High Courts</button>
+                  <button class="case-filter" data-filter="probono">Pro Bono</button>
+               </div>
+               <div class="case-search">
+               <input 
+                  type="text" 
+                  id="caseSearch" 
+                  placeholder="Search by party name, case number, or court..." 
+                  class="case-search-input"
+               >
+               </div>
+               <div class="cases-grid">
+                  <!-- ================= SUPREME COURT CASES ================= -->
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Sanjay Agarwal & Ors. vs Meghalaya Finlease Pvt. Ltd.</h4>
+                     <p class="case-court">Civil Appeal No. 8615/2017 • Supreme Court of India</p>
+                     <p class="case-summary">Corporate finance and recovery proceedings.</p>
+                     <span class="case-tag">Civil Appeal</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Indica Composite Pvt. Ltd. vs Nand Kumar Singh</h4>
+                     <p class="case-court">SLP (C) No. 12693/2018 • Supreme Court of India</p>
+                     <p class="case-summary">Commercial and contractual dispute.</p>
+                     <span class="case-tag">SLP (Civil)</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Inder Chand Pincha vs Borgang Tea Co. (P) Ltd.</h4>
+                     <p class="case-court">Civil Appeal Nos. 8031–8032/2018 • Supreme Court of India</p>
+                     <p class="case-summary">Labour and commercial liability matter.</p>
+                     <span class="case-tag">Labour Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Gopal Krishna Patar @ Raja Peter vs State of Jharkhand</h4>
+                     <p class="case-court">SLP (Crl.) No. 10563/2018 • Supreme Court of India</p>
+                     <p class="case-summary">Criminal appeal against conviction.</p>
+                     <span class="case-tag">Criminal Appeal</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Tayo Workers Union vs Suresh Padmanabhan</h4>
+                     <p class="case-court">Civil Appeal No. 3933/2018 • Supreme Court of India</p>
+                     <p class="case-summary">Industrial service dispute of 284 workers.</p>
+                     <span class="case-tag">Industrial Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Tisco Mazdoor Union vs Tata Iron & Steel Co. Ltd.</h4>
+                     <p class="case-court">SLP (C) No. 25138/2019 • Supreme Court of India</p>
+                     <p class="case-summary">Labour dispute with major industrial employer.</p>
+                     <span class="case-tag">Labour Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Odisha Vikash Parishad vs Union of India</h4>
+                     <p class="case-court">W.P. (C) No. 571/2020 • Supreme Court of India</p>
+                     <p class="case-summary">Public interest constitutional litigation.</p>
+                     <span class="case-tag">Constitutional Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Kamala Mills Ltd. vs Jayanta Banerjee</h4>
+                     <p class="case-court">C.A. Nos. 2278–2279/2021 • Supreme Court of India</p>
+                     <p class="case-summary">Corporate insolvency matter.</p>
+                     <span class="case-tag">IBC</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Jayanta Banerjee vs Shashi Agarwal & Ors.</h4>
+                     <p class="case-court">Civil Appeal Nos. 2209–2210/2021 • Supreme Court of India</p>
+                     <p class="case-summary">Insolvency and management control dispute.</p>
+                     <span class="case-tag">IBC</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">The Dynasty vs State of Assam</h4>
+                     <p class="case-court">SLP (C) No. 23465/2022 • Supreme Court of India</p>
+                     <p class="case-summary">Commercial regulatory challenge.</p>
+                     <span class="case-tag">Regulatory Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Soumya De & Ors. vs Shashi Aggarwal & Ors.</h4>
+                     <p class="case-court">Civil Appeal No. 8417/2022 • Supreme Court of India</p>
+                     <p class="case-summary">Civil and property dispute.</p>
+                     <span class="case-tag">Civil Appeal</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Sanjay Kumar Ladia vs State of Jharkhand</h4>
+                     <p class="case-court">SLP (Crl.) No. 10557/2023 • Supreme Court of India</p>
+                     <p class="case-summary">Criminal law challenge.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Mayank Bothra vs State of Jharkhand</h4>
+                     <p class="case-court">SLP (Crl.) No. 10221/2023 • Supreme Court of India</p>
+                     <p class="case-summary">Procedural criminal appeal.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Aditya Jajodia vs State of Jharkhand</h4>
+                     <p class="case-court">SLP (Crl.) No. 10480/2023 • Supreme Court of India</p>
+                     <p class="case-summary">Petition against criminal proceedings.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Rajiv Jajodia vs State of Jharkhand</h4>
+                     <p class="case-court">SLP (Crl.) No. 11052/2023 • Supreme Court of India</p>
+                     <p class="case-summary">Economic offence litigation.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Nilufar Rahman vs Afroza Rahman</h4>
+                     <p class="case-court">SLP (C) No. 16510/2023 • Supreme Court of India</p>
+                     <p class="case-summary">Matrimonial and family law dispute.</p>
+                     <span class="case-tag">Family Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Prowess International Pvt. Ltd. vs Vedanta Limited</h4>
+                     <p class="case-court">SLP (C) No. 4569/2024 • Supreme Court of India</p>
+                     <p class="case-summary">High-value commercial litigation.</p>
+                     <span class="case-tag">Corporate Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Bilcho Kujur vs Tata Iron & Steel Co. Ltd.</h4>
+                     <p class="case-court">SLP (C) No. 10530/2024 • Supreme Court of India</p>
+                     <p class="case-summary">Employment service dispute.</p>
+                     <span class="case-tag">Service Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">P. Chhanda Rao @ Dolly vs State of Jharkhand</h4>
+                     <p class="case-court">Diary No. 14166/2024 • Supreme Court of India</p>
+                     <p class="case-summary">Criminal diary-stage matter.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Nagendra Kumar Kushwaha & Ors. vs Union of India</h4>
+                     <p class="case-court">W.P. (C) No. 147/2024 • Supreme Court of India</p>
+                     <p class="case-summary">Constitutional writ petition.</p>
+                     <span class="case-tag">Constitutional Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Rajat Saraf vs State of Jharkhand</h4>
+                     <p class="case-court">SLP (Crl.) No. 16541/2025 • Supreme Court of India</p>
+                     <p class="case-summary">Criminal petition for relief.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Nilufar Rahman vs Afroza Rahman (Connected Matter)</h4>
+                     <p class="case-court">SLP (Crl.) No. 8441/2025 • Supreme Court of India</p>
+                     <p class="case-summary">Connected matrimonial proceedings.</p>
+                     <span class="case-tag">Family Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="supreme">
+                     <h4 class="case-title">Saurav Vishnu vs State of Jharkhand</h4>
+                     <p class="case-court">Diary No. 393/2025 • Supreme Court of India</p>
+                     <p class="case-summary">Civil special leave petition.</p>
+                     <span class="case-tag">Civil Appeal</span>
+                  </div>
+                  <!-- ================= PLACEHOLDERS FOR OTHER COURTS ================= -->
+                  <!-- ================= JHARKHAND HIGH COURT CASES ================= -->
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Sokhi Engineering Co. Pvt. Ltd. vs Baldev Singh & Ors.</h4>
+                     <p class="case-court">Company Appeal No. 01/2014 • Jharkhand High Court, Ranchi</p>
+                     <p class="case-summary">Company law dispute arising from CLB proceedings.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Garg Engineers Ltd. vs Baldev Singh & Ors.</h4>
+                     <p class="case-court">Company Appeal No. 02/2014 • Jharkhand High Court</p>
+                     <p class="case-summary">Corporate governance and shareholder dispute.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Nand Kumar Singh vs Indica Composite Pvt. Ltd.</h4>
+                     <p class="case-court">Company Appeal No. 03/2014 • Jharkhand High Court</p>
+                     <p class="case-summary">Company law appeal arising from CLB proceedings.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Pramod Khosla & Ors. vs Khosla Steel Industries Pvt. Ltd.</h4>
+                     <p class="case-court">Company Appeal No. 06/2014 • Jharkhand High Court</p>
+                     <p class="case-summary">Corporate management and shareholder rights dispute.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Pramod Khosla vs Khosla Steel Industries Pvt. Ltd.</h4>
+                     <p class="case-court">Company Appeal No. 07/2014 • Jharkhand High Court</p>
+                     <p class="case-summary">Company law appeal between promoter groups.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Bishender Singh & Ors. vs Pramod Khosla & Ors.</h4>
+                     <p class="case-court">Company Appeal No. 05/2014 • Jharkhand High Court</p>
+                     <p class="case-summary">Inter-se shareholder litigation.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Prefabs (Bihar) Pvt. Ltd. vs Union of India</h4>
+                     <p class="case-court">W.P. (T) No. 6142/2014 • Jharkhand High Court</p>
+                     <p class="case-summary">Taxation and excise duty dispute.</p>
+                     <span class="case-tag">Tax Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Tata Steel Ltd. vs Balkeshwar Singh</h4>
+                     <p class="case-court">W.P. (L) No. 5000/2014 • Jharkhand High Court</p>
+                     <p class="case-summary">Labour law dispute involving termination and service rights.</p>
+                     <span class="case-tag">Labour Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Gopal Krishna Patar @ Raja Peter vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (Cr.) No. 458/2017 • Jharkhand High Court</p>
+                     <p class="case-summary">Criminal writ challenging prosecution.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Sephali Mahato vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (Cr.) No. 433/2018 • Jharkhand High Court</p>
+                     <p class="case-summary">Criminal writ petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Yogik Technologies Pvt. Ltd. vs Union of India</h4>
+                     <p class="case-court">W.P. (C) No. 5730/2019 • Jharkhand High Court</p>
+                     <p class="case-summary">Corporate regulatory writ petition.</p>
+                     <span class="case-tag">Corporate Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Vijendra Kumar Sharma vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (PIL) No. 3866/2020 • Jharkhand High Court</p>
+                     <p class="case-summary">Public interest litigation.</p>
+                     <span class="case-tag">PIL</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Grih Laxmi Sales & Marketing vs Bank of Baroda</h4>
+                     <p class="case-court">W.P. (C) No. 3580/2020 • Jharkhand High Court</p>
+                     <p class="case-summary">Banking and recovery proceedings.</p>
+                     <span class="case-tag">Banking Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Sunil Kumar Agarwal vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 2236/2020 • Jharkhand High Court</p>
+                     <p class="case-summary">Constitutional writ petition.</p>
+                     <span class="case-tag">Constitutional Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Jharkhand Aboriginal Kudmi Panch vs Union of India</h4>
+                     <p class="case-court">W.P. (C) No. 2267/2021 • Jharkhand High Court</p>
+                     <p class="case-summary">Tribal rights and constitutional matter.</p>
+                     <span class="case-tag">Constitutional Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Mahendra Nath Gope vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. No. 1474/2021 • Jharkhand High Court</p>
+                     <p class="case-summary">Service law dispute.</p>
+                     <span class="case-tag">Service Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Ashok Agarwal vs Punjab National Bank</h4>
+                     <p class="case-court">W.P. (C) No. 3598/2021 • Jharkhand High Court</p>
+                     <p class="case-summary">Banking recovery litigation.</p>
+                     <span class="case-tag">Banking Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Johnson Lakra vs Tata Steel Ltd.</h4>
+                     <p class="case-court">LPA No. 364/2021 • Jharkhand High Court</p>
+                     <p class="case-summary">Labour appeal involving industrial employment.</p>
+                     <span class="case-tag">Labour Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Sunil Kumar Agarwal vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 2355/2022 • Jharkhand High Court</p>
+                     <p class="case-summary">Civil writ petition.</p>
+                     <span class="case-tag">Civil Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Sunil Kumar Agarwal vs State of Jharkhand</h4>
+                     <p class="case-court">Cr. M.P. No. 1762/2022 • Jharkhand High Court</p>
+                     <p class="case-summary">Criminal miscellaneous petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Tara Chand Mahato vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 5730/2022 • Jharkhand High Court</p>
+                     <p class="case-summary">Administrative law writ petition.</p>
+                     <span class="case-tag">Administrative Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Rajeev Kumar vs State of Jharkhand</h4>
+                     <p class="case-court">Cr. M.P. No. 1065/2022 • Jharkhand High Court</p>
+                     <p class="case-summary">Criminal miscellaneous petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Mayank Bothra vs State of Jharkhand</h4>
+                     <p class="case-court">Cr. M.P. No. 1859/2022 • Jharkhand High Court</p>
+                     <p class="case-summary">Criminal petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Aditya Jajodia vs State of Jharkhand</h4>
+                     <p class="case-court">Cr. M.P. No. 1787/2022 • Jharkhand High Court</p>
+                     <p class="case-summary">Criminal petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Sanjay Kumar Ladia vs State of Jharkhand</h4>
+                     <p class="case-court">Cr. M.P. No. 1277/2022 • Jharkhand High Court</p>
+                     <p class="case-summary">Criminal petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Sunil Kumar Agarwal vs State of Jharkhand</h4>
+                     <p class="case-court">LPA No. 119/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Letters Patent Appeal.</p>
+                     <span class="case-tag">LPA</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Roop Narayan Choudhary vs State of Jharkhand</h4>
+                     <p class="case-court">Cr. M.P. No. 2819/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Criminal miscellaneous petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Himadri Bhakat vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 1785/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Civil writ petition.</p>
+                     <span class="case-tag">Civil Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Vatan Mahto vs Union of India</h4>
+                     <p class="case-court">W.P. (C) No. 4879/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Service and administrative dispute.</p>
+                     <span class="case-tag">Administrative Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Ashok Mahato vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 7537/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Service and disciplinary proceedings.</p>
+                     <span class="case-tag">Service Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Hi Tech Heritage Ltd. vs Krishna Singh</h4>
+                     <p class="case-court">FA No. 77/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">First appeal in civil commercial dispute.</p>
+                     <span class="case-tag">Civil Appeal</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Hi Tech Heritage Ltd. vs Krishna Singh</h4>
+                     <p class="case-court">FA No. 44/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Connected civil appeal.</p>
+                     <span class="case-tag">Civil Appeal</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Afsar Javed vs Tata Motors Ltd.</h4>
+                     <p class="case-court">W.P. (C) No. 1616/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Employment and service dispute.</p>
+                     <span class="case-tag">Service Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Nishikant Singh vs Jamshedpur Notified Area Committee</h4>
+                     <p class="case-court">W.P. (C) No. 2161/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Municipal and administrative law dispute.</p>
+                     <span class="case-tag">Administrative Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Putul Pandey vs Jamshedpur Notified Area Committee</h4>
+                     <p class="case-court">W.P. (C) No. 2156/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Municipal administration dispute.</p>
+                     <span class="case-tag">Administrative Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Kaushik Vagadia vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 6926/2024 • Jharkhand High Court</p>
+                     <p class="case-summary">Civil writ petition.</p>
+                     <span class="case-tag">Civil Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Bhagirath Mahto vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 2286/2024 • Jharkhand High Court</p>
+                     <p class="case-summary">Service law dispute.</p>
+                     <span class="case-tag">Service Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Lalit Kumar vs State of Jharkhand & Sephali Mahato</h4>
+                     <p class="case-court">Cr. M.P. No. 1505/2024 • Jharkhand High Court</p>
+                     <p class="case-summary">Criminal miscellaneous petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Putul Pandey vs Jamshedpur Notified Area Committee</h4>
+                     <p class="case-court">Cont. (Cvl) No. 555/2024 • Jharkhand High Court</p>
+                     <p class="case-summary">Contempt proceedings.</p>
+                     <span class="case-tag">Contempt</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Nishikant Singh vs Jamshedpur Notified Area Committee</h4>
+                     <p class="case-court">Cont. (Cvl) No. 546/2024 • Jharkhand High Court</p>
+                     <p class="case-summary">Contempt proceedings.</p>
+                     <span class="case-tag">Contempt</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Paramedical Staffs Association Jharkhand vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 2828/2024 • Jharkhand High Court</p>
+                     <p class="case-summary">Service conditions and labour rights dispute.</p>
+                     <span class="case-tag">Service Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Deepak Kumar Mudi vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 13459/2024 • Jharkhand High Court</p>
+                     <p class="case-summary">Civil writ petition.</p>
+                     <span class="case-tag">Civil Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Krit Jeet Singh vs Tata Motors Ltd.</h4>
+                     <p class="case-court">W.P. (C) No. 13601/2024 • Jharkhand High Court</p>
+                     <p class="case-summary">Service law dispute.</p>
+                     <span class="case-tag">Service Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Jayanta Kumar Basu vs State of Jharkhand</h4>
+                     <p class="case-court">A.B.A. No. 5762/2024 • Jharkhand High Court</p>
+                     <p class="case-summary">Anticipatory bail application.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">G. Tulasaya Reddy @ Gedia Tulasaya Reddy vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 1034/2025 • Jharkhand High Court</p>
+                     <p class="case-summary">Civil writ petition.</p>
+                     <span class="case-tag">Civil Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Roop Narayan Choudhary & Ors. vs State of Jharkhand</h4>
+                     <p class="case-court">Cr. M.P. No. 1012/2025 • Jharkhand High Court</p>
+                     <p class="case-summary">Criminal miscellaneous petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Pegasus Assets Reconstruction Pvt. Ltd. vs State of Jharkhand</h4>
+                     <p class="case-court">Cr. M.P. No. 2659/2025 • Jharkhand High Court</p>
+                     <p class="case-summary">Banking and SARFAESI dispute.</p>
+                     <span class="case-tag">Banking Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Rajat Saraf vs State of Jharkhand</h4>
+                     <p class="case-court">A.B.A. No. 3645/2025 • Jharkhand High Court</p>
+                     <p class="case-summary">Anticipatory bail application.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Rahat Hussain (Mona Enterprises) vs Union of India</h4>
+                     <p class="case-court">W.P. (C) No. 2322/2025 • Jharkhand High Court</p>
+                     <p class="case-summary">Corporate regulatory writ petition.</p>
+                     <span class="case-tag">Corporate Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="nclat">
+                     <h4 class="case-title">Incab Industries Ltd. Insolvency Appeal</h4>
+                     <p class="case-court">NCLAT, New Delhi</p>
+                     <p class="case-summary">CIRP resolution process litigation.</p>
+                     <span class="case-tag">IBC</span>
+                  </div>
+                  <!-- ================= OTHER HIGH COURT CASES ================= -->
+                  <!-- CALCUTTA HIGH COURT -->
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Vikash Smelters & Alloys Ltd. (In Liqn.)</h4>
+                     <p class="case-court">C.A. No. 566/2016 with C.P. No. 77/2012 • Calcutta High Court</p>
+                     <p class="case-summary">Company winding-up proceedings.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Bimaldeep Steel Pvt. Ltd. vs Sidhi Vinayak Metcom Ltd.</h4>
+                     <p class="case-court">C.P. No. 964/2014 • Calcutta High Court</p>
+                     <p class="case-summary">Company petition for recovery of dues.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Metal Impregnations India Pvt. Ltd. vs Rashmi Metaliks Ltd.</h4>
+                     <p class="case-court">C.P. No. 491/2015 • Calcutta High Court</p>
+                     <p class="case-summary">Commercial dispute between steel manufacturers.</p>
+                     <span class="case-tag">Commercial Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Media Eleven Pvt. Ltd. vs Usha Rani Jha</h4>
+                     <p class="case-court">C.P. No. 643/2015 • Calcutta High Court</p>
+                     <p class="case-summary">Shareholder and management dispute.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Global Nest IT Solutions Pvt. Ltd. vs Balraj Gardilla & Ors.</h4>
+                     <p class="case-court">ACO No. 130/2015, APO No. 298/2015, ACO No. 110/2015 • Calcutta High Court</p>
+                     <p class="case-summary">Corporate governance and oppression–mismanagement dispute.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Techno Fab Manufacturing Ltd. & Prowess International Pvt. Ltd.</h4>
+                     <p class="case-court">C.P. No. 669/2016 • Calcutta High Court</p>
+                     <p class="case-summary">Company law insolvency proceedings.</p>
+                     <span class="case-tag">IBC</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Shyam Steel Industries Ltd. vs Prowess International Pvt. Ltd.</h4>
+                     <p class="case-court">C.P. No. 668/2016 • Calcutta High Court</p>
+                     <p class="case-summary">Commercial insolvency dispute.</p>
+                     <span class="case-tag">IBC</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Jai Balaji Industries Ltd. vs Prowess International Pvt. Ltd.</h4>
+                     <p class="case-court">C.P. No. 667/2016 • Calcutta High Court</p>
+                     <p class="case-summary">Steel sector insolvency matter.</p>
+                     <span class="case-tag">IBC</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Rungta Mines Ltd. & Ors.</h4>
+                     <p class="case-court">C.A. No. 93/2016 • Calcutta High Court</p>
+                     <p class="case-summary">Mining sector corporate litigation.</p>
+                     <span class="case-tag">Mining Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Rungta Mines Ltd. & Ors.</h4>
+                     <p class="case-court">C.P. No. 999/2016 • Calcutta High Court</p>
+                     <p class="case-summary">Winding-up proceedings.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Amit Roy & Anr. vs Rampur Agri Fresh Pvt. Ltd.</h4>
+                     <p class="case-court">APOT No. 277/2016, ACO No. 117/2016 • Calcutta High Court</p>
+                     <p class="case-summary">Corporate appeal.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Anup Kumar Agarwal & Anr. vs Crystal Thermotech Ltd.</h4>
+                     <p class="case-court">ACO No. 105/2016, APOT No. 268/2016 • Calcutta High Court</p>
+                     <p class="case-summary">Shareholder oppression and mismanagement case.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Kanwal Prakash Singh & Ors. vs State of West Bengal</h4>
+                     <p class="case-court">CRR No. 3004/2018 • Calcutta High Court</p>
+                     <p class="case-summary">Criminal revision petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Virendra Kumar vs State of West Bengal</h4>
+                     <p class="case-court">CRR No. 3171/2018 • Calcutta High Court</p>
+                     <p class="case-summary">Criminal revision petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Tata Steel Ltd. vs INCAB Industries Ltd.</h4>
+                     <p class="case-court">WPA No. 14251/2018 • Calcutta High Court</p>
+                     <p class="case-summary">Corporate insolvency and contractual dispute.</p>
+                     <span class="case-tag">IBC</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Manura Begum & Ors. vs State of West Bengal</h4>
+                     <p class="case-court">CRR No. 3245/2018 • Calcutta High Court</p>
+                     <p class="case-summary">Criminal revision petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Tantia Constructions Ltd. vs Krishna Hi-Tech Infrastructure Pvt. Ltd.</h4>
+                     <p class="case-court">CRR No. 172/2022 • Calcutta High Court</p>
+                     <p class="case-summary">Commercial dispute and arbitration related matter.</p>
+                     <span class="case-tag">Commercial Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Anup Mahata vs Union of India</h4>
+                     <p class="case-court">WPA No. 17924/2023 • Calcutta High Court</p>
+                     <p class="case-summary">Service and administrative writ petition.</p>
+                     <span class="case-tag">Administrative Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Ujjawal Kumar & Ors. vs NTPC Ltd.</h4>
+                     <p class="case-court">WPA No. 16634/2024 • Calcutta High Court</p>
+                     <p class="case-summary">Service and contractual dispute.</p>
+                     <span class="case-tag">Service Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Sri Ritesh Choudhary vs State of West Bengal</h4>
+                     <p class="case-court">WPA No. 26096/2024 • Calcutta High Court</p>
+                     <p class="case-summary">Criminal and administrative writ.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">South Point Education Society vs South Point School</h4>
+                     <p class="case-court">IP-COM No. 39/2024 • Calcutta High Court</p>
+                     <p class="case-summary">Intellectual property and trademark dispute.</p>
+                     <span class="case-tag">IP Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">South Point Education Society vs South Point Public School</h4>
+                     <p class="case-court">IP-COM No. 40/2024 • Calcutta High Court</p>
+                     <p class="case-summary">Trademark and passing-off dispute.</p>
+                     <span class="case-tag">IP Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Syeda Shamima Nasrin vs State of West Bengal</h4>
+                     <p class="case-court">CRR No. 4798/2025 • Calcutta High Court</p>
+                     <p class="case-summary">Criminal revision petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Udayan Sarkar vs State of West Bengal</h4>
+                     <p class="case-court">CRR No. 1082/2025 • Calcutta High Court</p>
+                     <p class="case-summary">Criminal revision petition.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <!-- GAUHATI HIGH COURT -->
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Deba Kumar Hazarika & Ors. vs Assam Chemicals & Pharmaceuticals Pvt. Ltd.</h4>
+                     <p class="case-court">Co. App. No. 3/2014 • Gauhati High Court, Assam</p>
+                     <p class="case-summary">Company appeal relating to shareholder dispute.</p>
+                     <span class="case-tag">Company Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Anil Kumar Dubey & Anr. vs Deba Kumar Hazarika</h4>
+                     <p class="case-court">Crl. Pet. No. 209/2020 • Gauhati High Court</p>
+                     <p class="case-summary">Criminal petition arising from commercial dispute.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Bimal Sarma & Ors. vs Deba Kumar Hazarika</h4>
+                     <p class="case-court">Crl. Pet. No. 231/2020 • Gauhati High Court</p>
+                     <p class="case-summary">Criminal petition in corporate litigation.</p>
+                     <span class="case-tag">Criminal Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Rahman Properties Ltd. vs Assam Power Distribution Co. Ltd.</h4>
+                     <p class="case-court">WP(C) No. 3524/2021 • Gauhati High Court</p>
+                     <p class="case-summary">Commercial electricity regulation dispute.</p>
+                     <span class="case-tag">Commercial Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Dr. Nilufar Rahman vs Afroza Rahman</h4>
+                     <p class="case-court">CRP No. 96/2022 • Gauhati High Court</p>
+                     <p class="case-summary">Family and property dispute.</p>
+                     <span class="case-tag">Family Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Afroza Rahman vs Dr. Nilufar Rahman</h4>
+                     <p class="case-court">I.A. (Civil) No. 2870/2022 • Gauhati High Court</p>
+                     <p class="case-summary">Interlocutory family law proceedings.</p>
+                     <span class="case-tag">Family Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Afroza Rahman vs Dr. Nilufar Rahman</h4>
+                     <p class="case-court">Intest. Case No. 5/2024 • Gauhati High Court</p>
+                     <p class="case-summary">Succession and inheritance dispute.</p>
+                     <span class="case-tag">Family Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Afroza Rahman vs Atikur Rahman</h4>
+                     <p class="case-court">CRP (IO) No. 81/2025 • Gauhati High Court</p>
+                     <p class="case-summary">Family and property litigation.</p>
+                     <span class="case-tag">Family Law</span>
+                  </div>
+                  <!-- UTTARAKHAND HIGH COURT -->
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Akhilesh Bahuguna vs State of Uttarakhand</h4>
+                     <p class="case-court">WPSB No. 122/2024 • Uttarakhand High Court, Nainital</p>
+                     <p class="case-summary">Service and employment dispute.</p>
+                     <span class="case-tag">Service Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Anil Chandra Baluni vs State of Uttarakhand</h4>
+                     <p class="case-court">WPPIL No. 73/2024 • Uttarakhand High Court</p>
+                     <p class="case-summary">Public interest litigation.</p>
+                     <span class="case-tag">PIL</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Zahid Ali vs State of Uttarakhand</h4>
+                     <p class="case-court">WPPIL No. 96/2024 • Uttarakhand High Court</p>
+                     <p class="case-summary">Public interest litigation.</p>
+                     <span class="case-tag">PIL</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Sujeet Kumar Vikas vs State of Uttarakhand</h4>
+                     <p class="case-court">WPSB No. 479/2025 • Uttarakhand High Court</p>
+                     <p class="case-summary">Service and disciplinary proceedings.</p>
+                     <span class="case-tag">Service Law</span>
+                  </div>
+                  <!-- ORISSA HIGH COURT -->
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Akash Sharma vs Government of Odisha</h4>
+                     <p class="case-court">W.P. (C) No. 30848 • Orissa High Court, Cuttack</p>
+                     <p class="case-summary">Service and administrative dispute.</p>
+                     <span class="case-tag">Administrative Law</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Akash Sharma vs Union of India</h4>
+                     <p class="case-court">WPA (P) No. 52/2025 • Orissa High Court</p>
+                     <p class="case-summary">Constitutional writ petition.</p>
+                     <span class="case-tag">Constitutional Law</span>
+                  </div>
+                  <!-- BOMBAY HIGH COURT (GOA BENCH) -->
+                  <div class="case-card premium-card" data-category="highcourt">
+                     <h4 class="case-title">Vedanta Ltd. vs Prowess International Pvt. Ltd.</h4>
+                     <p class="case-court">Arbitrator Appointment No. 1/2023 • Bombay High Court, Goa Bench</p>
+                     <p class="case-summary">Arbitration appointment dispute.</p>
+                     <span class="case-tag">Arbitration</span>
+                  </div>
+                  <!-- ================= PRO BONO CASES ================= -->
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Tayo Workers Union (284 Workers) vs Suresh Padmanabhan</h4>
+                     <p class="case-court">Civil Appeal No. 3933/2018 • Supreme Court of India</p>
+                     <p class="case-summary">Pro bono representation in labour and industrial dispute.</p>
+                     <span class="case-tag">Labour Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Deba Kumar Hazarika & Ors. vs Assam Chemicals & Pharmaceuticals Pvt. Ltd.</h4>
+                     <p class="case-court">Civil Appeal No. 6556/2019 • Supreme Court of India</p>
+                     <p class="case-summary">Pro bono corporate and labour litigation.</p>
+                     <span class="case-tag">Corporate Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Tisco Mazdoor Union vs Tata Iron & Steel Co. Ltd.</h4>
+                     <p class="case-court">SLP (C) No. 25138/2019 • Supreme Court of India</p>
+                     <p class="case-summary">Pro bono labour union representation.</p>
+                     <span class="case-tag">Labour Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Odisha Vikash Parishad vs Union of India</h4>
+                     <p class="case-court">W.P. (C) No. 571/2020 • Supreme Court of India</p>
+                     <p class="case-summary">Public interest constitutional litigation (pro bono).</p>
+                     <span class="case-tag">Constitutional Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Jayanta Banerjee vs Shashi Agarwal & Ors.</h4>
+                     <p class="case-court">Civil Appeal Nos. 2209–2210/2021 • Supreme Court of India</p>
+                     <p class="case-summary">Pro bono insolvency litigation.</p>
+                     <span class="case-tag">IBC • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Jayanta Banerjee vs Kamala Mills Ltd. & Ors.</h4>
+                     <p class="case-court">Civil Appeal Nos. 2278–2279/2021 • Supreme Court of India</p>
+                     <p class="case-summary">Pro bono insolvency appeal.</p>
+                     <span class="case-tag">IBC • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">P. Chhanda Rao @ Dolly vs State of Jharkhand</h4>
+                     <p class="case-court">Diary No. 14166/2024 • Supreme Court of India</p>
+                     <p class="case-summary">Pro bono criminal diary-stage matter.</p>
+                     <span class="case-tag">Criminal Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Saurav Vishnu vs State of Jharkhand</h4>
+                     <p class="case-court">Diary No. 393/2025 • Supreme Court of India</p>
+                     <p class="case-summary">Pro bono civil special leave petition.</p>
+                     <span class="case-tag">Civil Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Tayo Rolls Ltd. vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (L) No. 671/2018 • Jharkhand High Court</p>
+                     <p class="case-summary">Pro bono labour law writ petition.</p>
+                     <span class="case-tag">Labour Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Tayo Rolls Ltd. vs Santosh Kumar Gupta</h4>
+                     <p class="case-court">W.P. (L) No. 927/2018 • Jharkhand High Court</p>
+                     <p class="case-summary">Pro bono service and labour litigation.</p>
+                     <span class="case-tag">Labour Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Ajay Kumar Sharma vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 3573/2019 • Jharkhand High Court</p>
+                     <p class="case-summary">Pro bono civil rights litigation.</p>
+                     <span class="case-tag">Civil Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">People’s Union for Civil Liberties vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (PIL) No. 3434/2019 • Jharkhand High Court</p>
+                     <p class="case-summary">Human rights public interest litigation.</p>
+                     <span class="case-tag">Human Rights • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Vijendra Kumar Sharma vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (PIL) No. 3866/2020 • Jharkhand High Court</p>
+                     <p class="case-summary">Public interest litigation (pro bono).</p>
+                     <span class="case-tag">PIL • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Arvind Anjum vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 2649/2020 • Jharkhand High Court</p>
+                     <p class="case-summary">Pro bono constitutional writ petition.</p>
+                     <span class="case-tag">Constitutional Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Bhagwati Singh vs Union of India</h4>
+                     <p class="case-court">CMP No. 187/2020 • Jharkhand High Court</p>
+                     <p class="case-summary">Pro bono administrative law petition.</p>
+                     <span class="case-tag">Administrative Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Bilcho Kujur vs Tata Steel Ltd.</h4>
+                     <p class="case-court">LPA No. 364/2021 • Jharkhand High Court</p>
+                     <p class="case-summary">Pro bono labour law appeal.</p>
+                     <span class="case-tag">Labour Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Afsar Jawed vs Dept. of Labour, Jharkhand</h4>
+                     <p class="case-court">W.P. (L) No. 1616/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Pro bono employment rights litigation.</p>
+                     <span class="case-tag">Service Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Sumitra Barman vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (Cr.) No. 300/2023 • Jharkhand High Court</p>
+                     <p class="case-summary">Pro bono criminal writ petition.</p>
+                     <span class="case-tag">Criminal Law • Pro Bono</span>
+                  </div>
+                  <div class="case-card premium-card" data-category="probono">
+                     <h4 class="case-title">Saurav Vishnu vs State of Jharkhand</h4>
+                     <p class="case-court">W.P. (C) No. 2636/2024 • Jharkhand High Court</p>
+                     <p class="case-summary">Pro bono civil writ petition.</p>
+                     <span class="case-tag">Civil Law • Pro Bono</span>
+                  </div>
+               </div>
+            </div>
+         </section>
          <section class="testimonials" id="testimonials">
             <div class="container">
                <div class="section-header">
@@ -789,7 +1614,7 @@
                   <h2 class="cta-banner__title">Ready to Discuss Your Case?</h2>
                   <p class="cta-banner__text">Let our experience be your guide. Schedule a confidential consultation today to explore your legal options.</p>
                   <button class="btn btn--primary btn--lg btn--glow consultation-btn">
-                  <span>Book a Free Strategy Session</span>
+                  <span>Book a Strategy Session</span>
                   </button>
                </div>
             </div>

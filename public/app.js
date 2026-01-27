@@ -1,372 +1,387 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    /* ================= CONFIG ================= */
-    const AppConfig = window.__APP_CONFIG__ || {
-        carouselInterval: 5000,
-        counterAnimationDuration: 2500,
-        loadingDuration: 1500,
-        web3FormsAccessKey: "f172d582-f61e-4dc1-ac3a-c144e252b0dd"
-    };
+  /* ================= CONFIG ================= */
+  const AppConfig = window.__APP_CONFIG__ || {
+    carouselInterval: 5000,
+    counterAnimationDuration: 2500,
+    loadingDuration: 1500,
+    web3FormsAccessKey: "f172d582-f61e-4dc1-ac3a-c144e252b0dd"
+  };
 
-    /* ================= UTILS ================= */
-    const Utils = {
-        $(s, c = document) {
-            return c.querySelector(s);
-        },
-        $$(s, c = document) {
-            return [...c.querySelectorAll(s)];
-        },
+  /* ================= UTILS ================= */
+  const Utils = {
+    $(s, c = document) { return c.querySelector(s); },
+    $$(s, c = document) { return [...c.querySelectorAll(s)]; },
 
-        animateNumber(el, target, duration = 2000) {
-            const start = parseInt(el.textContent) || 0;
-            const change = target - start;
-            const suffix = el.dataset.suffix || '';
-            const startTime = performance.now();
+    animateNumber(el, target, duration = 2000) {
+      const start = parseInt(el.textContent) || 0;
+      const change = target - start;
+      const suffix = el.dataset.suffix || '';
+      const startTime = performance.now();
 
-            const animate = (time) => {
-                const progress = Math.min((time - startTime) / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                el.textContent = Math.floor(start + change * eased) + suffix;
-                if (progress < 1) requestAnimationFrame(animate);
-            };
-            requestAnimationFrame(animate);
-        },
+      const animate = (time) => {
+        const progress = Math.min((time - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(start + change * eased) + suffix;
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
+    },
 
-        createObserver(cb, options = {}) {
-            return new IntersectionObserver(cb, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px',
-                ...options
-            });
-        },
+    createObserver(cb, options = {}) {
+      return new IntersectionObserver(cb, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+        ...options
+      });
+    },
 
-        getTheme() {
-            return localStorage.getItem('theme') ||
-                (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        },
+    getTheme() {
+      return localStorage.getItem('theme') ||
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    },
 
-        setTheme(theme) {
-            document.documentElement.setAttribute('data-color-scheme', theme);
-            localStorage.setItem('theme', theme);
+    setTheme(theme) {
+      document.documentElement.setAttribute('data-color-scheme', theme);
+      localStorage.setItem('theme', theme);
+    }
+  };
+
+  /* ================= LOADING ================= */
+  const LoadingScreen = {
+    init() {
+      const el = Utils.$('#loading-screen');
+      if (!el) return;
+
+      setTimeout(() => {
+        el.classList.add('hidden');
+        setTimeout(() => el.remove(), 500);
+      }, AppConfig.loadingDuration);
+
+      setTimeout(() => {
+        if (document.body.contains(el)) el.remove();
+      }, 5000);
+    }
+  };
+
+  /* ================= NAVIGATION ================= */
+  const Navigation = {
+    init() {
+      const header = Utils.$('#header');
+      const navMenu = Utils.$('#nav-menu');
+      const navToggle = Utils.$('#nav-toggle');
+      const navClose = Utils.$('#nav-close');
+      const navLinks = Utils.$$('.nav__link');
+      if (!header || !navMenu) return;
+
+      navToggle?.addEventListener('click', () => navMenu.classList.add('show-menu'));
+      navClose?.addEventListener('click', () => navMenu.classList.remove('show-menu'));
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          const id = link.getAttribute('href');
+          navMenu.classList.remove('show-menu');
+          if (!id.startsWith('#')) return;
+
+          e.preventDefault();
+          const target = Utils.$(id);
+          if (!target) return;
+
+          window.scrollTo({
+            top: target.offsetTop - header.offsetHeight,
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            header.classList.toggle('scrolled', scrollY > 50);
+            this.updateActive(navLinks, header.offsetHeight);
+            ticking = false;
+          });
+          ticking = true;
         }
-    };
+      });
+    },
 
-    /* ================= LOADING ================= */
-    const LoadingScreen = {
-        init() {
-            const el = Utils.$('#loading-screen');
-            if (!el) return;
-
-            setTimeout(() => {
-                el.classList.add('hidden');
-                setTimeout(() => el.remove(), 500);
-            }, AppConfig.loadingDuration);
-
-            setTimeout(() => {
-                if (document.body.contains(el)) el.remove();
-            }, 5000);
+    updateActive(links, offset) {
+      let current = '';
+      Utils.$$('section[id]').forEach(sec => {
+        if (sec.getBoundingClientRect().top < offset + 60) {
+          current = sec.id;
         }
-    };
+      });
+      links.forEach(l =>
+        l.classList.toggle('active-link', l.getAttribute('href') === `#${current}`)
+      );
+    }
+  };
 
-    /* ================= NAVIGATION ================= */
-    const Navigation = {
-        init() {
-            const header = Utils.$('#header');
-            const navMenu = Utils.$('#nav-menu');
-            const navToggle = Utils.$('#nav-toggle');
-            const navClose = Utils.$('#nav-close');
-            const navLinks = Utils.$$('.nav__link');
-            if (!header || !navMenu) return;
+  /* ================= THEME ================= */
+  const ThemeToggle = {
+    init() {
+      const btn = Utils.$('#theme-toggle');
+      const icon = Utils.$('.theme-toggle__icon');
+      if (!btn) return;
 
-            navToggle?.addEventListener('click', () => navMenu.classList.add('show-menu'));
-            navClose?.addEventListener('click', () => navMenu.classList.remove('show-menu'));
+      const apply = t => {
+        Utils.setTheme(t);
+        if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙';
+      };
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', e => {
-                    const id = link.getAttribute('href');
-                    navMenu.classList.remove('show-menu');
-                    if (!id.startsWith('#')) return;
+      btn.addEventListener('click', () =>
+        apply(Utils.getTheme() === 'dark' ? 'light' : 'dark')
+      );
+      apply(Utils.getTheme());
+    }
+  };
 
-                    e.preventDefault();
-                    const target = Utils.$(id);
-                    if (!target) return;
+  /* ================= STATS ================= */
+  const StatsCounter = {
+    init() {
+      const section = Utils.$('.hero__stats');
+      if (!section) return;
 
-                    window.scrollTo({
-                        top: target.offsetTop - header.offsetHeight,
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            let ticking = false;
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    requestAnimationFrame(() => {
-                        header.classList.toggle('scrolled', scrollY > 50);
-                        this.updateActive(navLinks, header.offsetHeight);
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            });
-        },
-
-        updateActive(links, offset) {
-            let current = '';
-            Utils.$$('section[id]').forEach(sec => {
-                if (sec.getBoundingClientRect().top < offset + 60) {
-                    current = sec.id;
-                }
-            });
-            links.forEach(l =>
-                l.classList.toggle('active-link', l.getAttribute('href') === `#${current}`)
+      const observer = Utils.createObserver(entries => {
+        if (entries[0].isIntersecting) {
+          Utils.$$('.stat-card__number[data-target]').forEach((el, i) => {
+            setTimeout(() =>
+              Utils.animateNumber(el, +el.dataset.target, AppConfig.counterAnimationDuration),
+              i * 150
             );
+          });
+          observer.disconnect();
         }
-    };
+      }, { threshold: 0.8 });
 
-    /* ================= THEME ================= */
-    const ThemeToggle = {
-        init() {
-            const btn = Utils.$('#theme-toggle');
-            const icon = Utils.$('.theme-toggle__icon');
-            if (!btn) return;
+      observer.observe(section);
+    }
+  };
 
-            const apply = t => {
-                Utils.setTheme(t);
-                if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙';
-            };
+  /* ================= SWIPER ================= */
+  const SwiperCarousels = {
+    init() {
+      if (typeof Swiper === 'undefined') return;
 
-            btn.addEventListener('click', () =>
-                apply(Utils.getTheme() === 'dark' ? 'light' : 'dark')
-            );
-            apply(Utils.getTheme());
-        }
-    };
+      if (!document.querySelector('.team-carousel.swiper-initialized')) {
+        new Swiper('.team-carousel', {
+          loop: true,
+          grabCursor: true,
+          spaceBetween: 30,
+          navigation: {
+            nextEl: '.team-carousel-button-next',
+            prevEl: '.team-carousel-button-prev'
+          },
+          pagination: {
+            el: '.team-carousel .swiper-pagination',
+            clickable: true
+          },
+          breakpoints: {
+            320: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+          }
+        });
+      }
 
-    /* ================= STATS ================= */
-    const StatsCounter = {
-        init() {
-            const section = Utils.$('.hero__stats');
-            if (!section) return;
+      if (!document.querySelector('.clients-carousel.swiper-initialized')) {
+        new Swiper('.clients-carousel', {
+          loop: true,
+          grabCursor: true,
+          spaceBetween: 30,
+          autoplay: { delay: 3000, disableOnInteraction: false },
+          pagination: {
+            el: '.clients-carousel .swiper-pagination',
+            clickable: true
+          },
+          breakpoints: {
+            320: { slidesPerView: 1 },
+            480: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 }
+          }
+        });
+      }
+    }
+  };
 
-            const observer = Utils.createObserver(entries => {
-                if (entries[0].isIntersecting) {
-                    Utils.$$('.stat-card__number[data-target]').forEach((el, i) => {
-                        setTimeout(() =>
-                            Utils.animateNumber(el, +el.dataset.target, AppConfig.counterAnimationDuration),
-                            i * 150
-                        );
-                    });
-                    observer.disconnect();
-                }
-            }, {
-                threshold: 0.8
-            });
+  /* ================= NOTABLE CASES FILTER ================= */
+  const NotableCases = {
+    init() {
+      const filters = Utils.$$('.case-filter');
+      const caseCards = Utils.$$('.case-card');
+      if (!filters.length || !caseCards.length) return;
 
-            observer.observe(section);
-        }
-    };
+      filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+          filters.forEach(f => f.classList.remove('active'));
+          filter.classList.add('active');
 
-    /* ================= SWIPER (FIXED CLIENTS) ================= */
-    const SwiperCarousels = {
-        init() {
-            if (typeof Swiper === 'undefined') {
-                console.error('Swiper not loaded');
-                return;
+          const category = filter.dataset.filter;
+
+          caseCards.forEach(card => {
+            const cardCategory = card.dataset.category;
+            if (category === 'all' || cardCategory === category) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
             }
+          });
+        });
+      });
+    }
+  };
 
-            /* TEAM */
-            if (!document.querySelector('.team-carousel.swiper-initialized')) {
-                new Swiper('.team-carousel', {
-                    loop: true,
-                    grabCursor: true,
-                    spaceBetween: 30,
-                    navigation: {
-                        nextEl: '.team-carousel-button-next',
-                        prevEl: '.team-carousel-button-prev'
-                    },
-                    pagination: {
-                        el: '.team-carousel .swiper-pagination',
-                        clickable: true
-                    },
-                    breakpoints: {
-                        320: {
-                            slidesPerView: 1
-                        },
-                        768: {
-                            slidesPerView: 2
-                        },
-                        1024: {
-                            slidesPerView: 3
-                        }
-                    }
-                });
-            }
+  /* ================= CASE SEARCH ================= */
+  const CaseSearch = {
+    init() {
+      const input = document.getElementById("caseSearch");
+      if (!input) return;
 
-            /* CLIENTS — FIXED */
-            if (!document.querySelector('.clients-carousel.swiper-initialized')) {
-                new Swiper('.clients-carousel', {
-                    loop: true,
-                    grabCursor: true,
-                    spaceBetween: 30,
-                    autoplay: {
-                        delay: 3000,
-                        disableOnInteraction: false
-                    },
-                    pagination: {
-                        el: '.clients-carousel .swiper-pagination',
-                        clickable: true
-                    },
-                    breakpoints: {
-                        320: {
-                            slidesPerView: 1
-                        },
-                        480: {
-                            slidesPerView: 2
-                        },
-                        768: {
-                            slidesPerView: 3
-                        },
-                        1024: {
-                            slidesPerView: 4
-                        }
-                    }
-                });
-            }
+      input.addEventListener("input", () => {
+        const query = input.value.toLowerCase();
+
+        document.querySelectorAll(".case-card").forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(query) ? "block" : "none";
+        });
+      });
+    }
+  };
+
+  /* ================= FORMS ================= */
+  const FormHandler = {
+    init() {
+      Utils.$$('#consultation-form, #contact-form').forEach(f => this.attach(f));
+    },
+
+    attach(form) {
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+
+        if (!AppConfig.web3FormsAccessKey) {
+          alert('Web3Forms key missing');
+          return;
         }
-    };
 
-    /* ================= FORMS ================= */
-    const FormHandler = {
-        init() {
-            Utils.$$('#consultation-form, #contact-form').forEach(f => this.attach(f));
-        },
-
-        attach(form) {
-            form.addEventListener('submit', async e => {
-                e.preventDefault();
-
-                if (!AppConfig.web3FormsAccessKey) {
-                    alert('Web3Forms key missing');
-                    return;
-                }
-
-                if (![...form.elements].every(el => !el.required || el.value.trim())) {
-                    alert('Please fill all required fields');
-                    return;
-                }
-
-                const btn = form.querySelector('button[type="submit"]');
-                btn.disabled = true;
-                btn.textContent = 'Sending...';
-
-                try {
-                    const body = JSON.stringify({
-                        ...Object.fromEntries(new FormData(form)),
-                        access_key: AppConfig.web3FormsAccessKey
-                    });
-
-                    const res = await fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body
-                    });
-
-                    const data = await res.json();
-                    if (!data.success) throw new Error();
-
-                    btn.textContent = 'Sent Successfully!';
-                    form.reset();
-                    return;
-                } catch {
-                    btn.textContent = 'Error! Try Again';
-                } finally {
-                    setTimeout(() => {
-                        btn.disabled = false;
-                        btn.textContent = 'Submit';
-                    }, 4000);
-                }
-            });
+        if (![...form.elements].every(el => !el.required || el.value.trim())) {
+          alert('Please fill all required fields');
+          return;
         }
-    };
 
-    /* ================= MODAL ================= */
-    const Modal = {
-        init() {
-            const modal = Utils.$('#consultation-modal');
-            if (!modal) return;
+        const btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
 
-            const open = () => {
-                modal.classList.remove('hidden');
-                modal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            };
+        try {
+          const body = JSON.stringify({
+            ...Object.fromEntries(new FormData(form)),
+            access_key: AppConfig.web3FormsAccessKey
+          });
 
-            const close = () => {
-                modal.classList.add('hidden');
-                modal.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            };
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body
+          });
 
-            Utils.$$('.consultation-btn').forEach(b => b.addEventListener('click', open));
-            Utils.$('#modal-close')?.addEventListener('click', close);
+          const data = await res.json();
+          if (!data.success) throw new Error();
 
-            modal.addEventListener('click', e => e.target === modal && close());
-            document.addEventListener('keydown', e => e.key === 'Escape' && close());
+          btn.textContent = 'Sent Successfully!';
+          form.reset();
+        } catch {
+          btn.textContent = 'Error! Try Again';
+        } finally {
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.textContent = 'Submit';
+          }, 4000);
         }
-    };
+      });
+    }
+  };
 
-    /* ================= CARD FLIP ================= */
-    const CardFlipper = {
-        init() {
-            document.addEventListener('click', e => {
-                const btn = e.target.closest('.js-flip-button');
-                btn?.closest('.team-card')?.classList.toggle('is-flipped');
-            });
-        }
-    };
+  /* ================= MODAL ================= */
+  const Modal = {
+    init() {
+      const modal = Utils.$('#consultation-modal');
+      if (!modal) return;
 
-    /* ================= SCROLL ANIM ================= */
-    const ScrollAnimations = {
-        init() {
-            const els = Utils.$$('.premium-card, .timeline-item, .highlight-item');
-            if (!els.length) return;
+      const open = () => {
+        modal.classList.remove('hidden');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
 
-            const observer = Utils.createObserver(entries => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) {
-                        e.target.style.animation = 'fadeInUp 0.8s ease-out both';
-                        observer.unobserve(e.target);
-                    }
-                });
-            });
+      const close = () => {
+        modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
 
-            els.forEach(el => observer.observe(el));
-        }
-    };
+      Utils.$$('.consultation-btn').forEach(b => b.addEventListener('click', open));
+      Utils.$('#modal-close')?.addEventListener('click', close);
 
-    /* ================= APP ================= */
-    const App = {
-        modules: [
-            LoadingScreen,
-            Navigation,
-            ThemeToggle,
-            StatsCounter,
-            SwiperCarousels,
-            Modal,
-            FormHandler,
-            CardFlipper,
-            ScrollAnimations
-        ],
-        init() {
-            this.modules.forEach(m => m.init?.());
-            console.log('✅ Website Initialized Successfully');
-        }
-    };
+      modal.addEventListener('click', e => e.target === modal && close());
+      document.addEventListener('keydown', e => e.key === 'Escape' && close());
+    }
+  };
 
-    document.addEventListener('DOMContentLoaded', () => App.init());
+  /* ================= CARD FLIP ================= */
+  const CardFlipper = {
+    init() {
+      document.addEventListener('click', e => {
+        const btn = e.target.closest('.js-flip-button');
+        btn?.closest('.team-card')?.classList.toggle('is-flipped');
+      });
+    }
+  };
+
+  /* ================= SCROLL ANIM ================= */
+  const ScrollAnimations = {
+    init() {
+      const els = Utils.$$('.premium-card, .timeline-item, .highlight-item, .case-card');
+      if (!els.length) return;
+
+      const observer = Utils.createObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.animation = 'fadeInUp 0.8s ease-out both';
+            observer.unobserve(e.target);
+          }
+        });
+      });
+
+      els.forEach(el => observer.observe(el));
+    }
+  };
+
+  /* ================= APP ================= */
+  const App = {
+    modules: [
+      LoadingScreen,
+      Navigation,
+      ThemeToggle,
+      StatsCounter,
+      SwiperCarousels,
+      NotableCases,
+      CaseSearch,
+      Modal,
+      FormHandler,
+      CardFlipper,
+      ScrollAnimations
+    ],
+    init() {
+      this.modules.forEach(m => m.init?.());
+      console.log('✅ Website Initialized Successfully');
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', () => App.init());
 
 })();

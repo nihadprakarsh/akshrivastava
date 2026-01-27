@@ -333,11 +333,11 @@ body::before {
     left: 0;
     width: 100%; /* FIX: Use 100% instead of 100vw to avoid scrollbar issues */
     height: 100vh;
-    background-image: url(assets/legal-access-logo.png);
+    background-image: url(assets/logo.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 350px;
-    opacity: 0.03;
+    opacity: 0.05;
     z-index: -1;
     pointer-events: none;
 }
@@ -1031,6 +1031,7 @@ html {
 }
 
 .nav__link {
+    font-size: 13px;  
     color: var(--color-text);
     text-decoration: none;
     font-weight: var(--font-weight-medium);
@@ -2423,4 +2424,124 @@ section {
 [data-color-scheme="light"] .modal-form select.form-control:valid + .form-label {
     background-color: var(--color-surface);
 }
+
+/* ============================= */
+/* Notable Cases Section */
+/* ============================= */
+
+.notable-cases {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.case-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.case-filter {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: all 0.25s ease;
+}
+
+.case-filter.active,
+.case-filter:hover {
+  background: var(--gradient-primary);
+  color: var(--color-btn-primary-text);
+  border-color: transparent;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.case-card {
+  padding: 24px;
+}
+
+.case-title {
+  font-size: var(--font-size-lg);
+  margin-bottom: 6px;
+}
+
+.case-court {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: 10px;
+}
+
+.case-summary {
+  font-size: var(--font-size-base);
+  margin-bottom: 12px;
+}
+
+.case-tag {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+/* ================= CASE SEARCH ================= */
+
+.case-search {
+  margin: 20px 0 30px;
+  text-align: center;
+}
+
+.case-search-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: var(--text-color);
+  font-size: 15px;
+  outline: none;
+  backdrop-filter: blur(10px);
+}
+
+.case-search-input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ================= CASE SEARCH – LIGHT MODE FIX ================= */
+
+:root[data-color-scheme="light"] .case-search-input {
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+:root[data-color-scheme="light"] .case-search-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ================= CASE SEARCH – DARK MODE (REINFORCE) ================= */
+
+:root[data-color-scheme="dark"] .case-search-input {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-color-scheme="dark"] .case-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
 
