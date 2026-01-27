@@ -1963,29 +1963,30 @@ section {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 1024px) {
-    .hero__container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-    .hero__content {
-        text-align: center;
-    }
-    .hero-image-container {
-        order: -1;
-        margin-bottom: 2rem;
-    }
-    .hero-photo {
-        transform: perspective(1200px) rotateY(0) rotateX(0) scale(1);
-    }
-    .hero__cta {
-        justify-content: center;
-    }
-    .hero__stats {
-        margin: 0 auto;
-    }
+@media (max-width: 768px) {
+  .hero__container {
+    display: grid;
+    grid-template-columns: 1fr;   /* stack columns */
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero__content {
+    text-align: center;
+  }
+
+  .hero-image-container {
+    margin-top: 24px;
+    order: -1; /* image on top */
+  }
+
+  .hero-photo {
+    max-width: 220px;
+    height: auto;
+    transform: none;
+  }
 }
+
 
 
 @media screen and (max-width: 768px) {
@@ -2032,6 +2033,14 @@ section {
       padding: 0 40px;
   }
 }
+
+@media (max-width: 768px) {
+  .hero__stats {
+    grid-template-columns: 1fr; /* one card per row */
+    gap: 12px;
+  }
+}
+
 
 @media screen and (max-width: 480px) {
   .logo-container {
@@ -2516,6 +2525,25 @@ section {
 .case-search-input::placeholder {
   color: rgba(255,255,255,0.5);
 }
+
+@media (max-width: 768px) {
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}
+
 
 /* ================= CASE SEARCH – LIGHT MODE FIX ================= */
 
