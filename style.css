@@ -895,7 +895,7 @@ html {
 }
 
 .loading-logo {
-    width: 250px;
+    width: 200px;
     height: auto;
     margin-bottom: 1rem;
     animation: pulse 2s infinite ease-in-out;
