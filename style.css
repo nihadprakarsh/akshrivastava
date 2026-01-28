@@ -895,14 +895,14 @@ html {
 }
 
 .loading-logo {
-    width: 150px;
+    width: 250px;
     height: auto;
     margin-bottom: 1rem;
     animation: pulse 2s infinite ease-in-out;
 }
 
 .loading-text {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 1px;
   color: var(--color-legal-gold);
