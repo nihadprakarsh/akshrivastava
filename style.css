@@ -53,7 +53,7 @@
   --color-surface: var(--color-cream-100);
   --color-surface-rgb: var(--color-cream-100-rgb);
   --color-text: var(--color-slate-900);
-  --color-text-secondary: var(--color-slate-500);
+  --color-text-secondary: var(--color-slate-100);
   --color-primary: var(--color-teal-500);
   --color-primary-hover: var(--color-teal-600);
   --color-primary-active: var(--color-teal-700);
@@ -325,19 +325,18 @@ body {
   width: 100%;
 }
 
-/* FAINT LOGO BACKGROUND */
+/* FAINT FULL-BACKGROUND IMAGE */
 body::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; /* FIX: Use 100% instead of 100vw to avoid scrollbar issues */
-    height: 100vh;
-    background-image: url(assets/logo.png);
+    inset: 0;                
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/supreme_court.png');
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 350px;
-    opacity: 0.05;
+    background-position: center;
+    background-size: cover;  
+    opacity: 0.3;           
     z-index: -1;
     pointer-events: none;
 }
@@ -1206,11 +1205,16 @@ html {
 
 .hero__description {
   font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
+  color: var(--color-white);
   margin-bottom: var(--space-32);
   max-width: 600px;
   line-height: 1.7;
 }
+
+[data-color-scheme="light"] .hero__description {
+  color: var(--color-slate-900);
+}
+
 
 .hero__cta {
   display: flex;
@@ -1833,7 +1837,7 @@ section {
 
 .cta-banner__text {
     font-size: var(--font-size-lg);
-    color: var(--color-gray-300);
+    color: var(--color-white);
     margin-bottom: var(--space-24);
 }
 

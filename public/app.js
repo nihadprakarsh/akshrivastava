@@ -43,7 +43,7 @@
 
         // 🔧 FIXED: Always default to LIGHT unless user explicitly chose
         getTheme() {
-            return localStorage.getItem('theme') || 'light';
+            return localStorage.getItem('theme') || 'dark';
         },
 
         setTheme(theme) {
