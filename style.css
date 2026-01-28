@@ -2455,14 +2455,24 @@ section {
 }
 
 .case-filter {
-  padding: 8px 18px;
+  padding: 12px 26px;
   border-radius: var(--radius-full);
   border: 1px solid var(--color-border);
   background: transparent;
   cursor: pointer;
-  font-size: var(--font-size-sm);
+  font-size: 1rem;
   transition: all 0.25s ease;
+  color: dark; 
+  font-weight: 500;
 }
+
+
+@media (prefers-color-scheme: light) {
+  .case-filter {
+    color: white;
+  }
+}
+
 
 .case-filter.active,
 .case-filter:hover {
