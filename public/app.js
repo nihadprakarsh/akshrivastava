@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     /* ================= CONFIG ================= */
@@ -41,7 +41,6 @@
             });
         },
 
-        // 🔧 FIXED: Always default to LIGHT unless user explicitly chose
         getTheme() {
             return localStorage.getItem('theme') || 'dark';
         },
@@ -77,6 +76,7 @@
             const navToggle = Utils.$('#nav-toggle');
             const navClose = Utils.$('#nav-close');
             const navLinks = Utils.$$('.nav__link');
+
             if (!header || !navMenu) return;
 
             navToggle?.addEventListener('click', () => navMenu.classList.add('show-menu'));
@@ -86,7 +86,8 @@
                 link.addEventListener('click', e => {
                     const id = link.getAttribute('href');
                     navMenu.classList.remove('show-menu');
-                    if (!id.startsWith('#')) return;
+
+                    if (!id || !id.startsWith('#')) return;
 
                     e.preventDefault();
                     const target = Utils.$(id);
@@ -103,7 +104,7 @@
             window.addEventListener('scroll', () => {
                 if (!ticking) {
                     requestAnimationFrame(() => {
-                        header.classList.toggle('scrolled', scrollY > 50);
+                        header.classList.toggle('scrolled', window.scrollY > 50);
                         this.updateActive(navLinks, header.offsetHeight);
                         ticking = false;
                     });
@@ -141,7 +142,6 @@
                 apply(Utils.getTheme() === 'dark' ? 'light' : 'dark')
             );
 
-            // 🔧 Default is now LIGHT
             apply(Utils.getTheme());
         }
     };
@@ -162,9 +162,7 @@
                     });
                     observer.disconnect();
                 }
-            }, {
-                threshold: 0.8
-            });
+            }, { threshold: 0.8 });
 
             observer.observe(section);
         }
@@ -189,15 +187,26 @@
                         clickable: true
                     },
                     breakpoints: {
-                        320: {
-                            slidesPerView: 1
-                        },
-                        768: {
-                            slidesPerView: 2
-                        },
-                        1024: {
-                            slidesPerView: 3
-                        }
+                        320: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 }
+                    }
+                });
+            }
+
+            if (!document.querySelector('.about-carousel.swiper-initialized')) {
+                new Swiper('.about-carousel', {
+                    loop: false,
+                    grabCursor: true,
+                    spaceBetween: 60,
+                    autoHeight: true,
+                    pagination: {
+                        el: '.about-carousel .swiper-pagination',
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: '.about-carousel .swiper-button-next',
+                        prevEl: '.about-carousel .swiper-button-prev'
                     }
                 });
             }
@@ -216,25 +225,17 @@
                         clickable: true
                     },
                     breakpoints: {
-                        320: {
-                            slidesPerView: 1
-                        },
-                        480: {
-                            slidesPerView: 2
-                        },
-                        768: {
-                            slidesPerView: 3
-                        },
-                        1024: {
-                            slidesPerView: 4
-                        }
+                        320: { slidesPerView: 1 },
+                        480: { slidesPerView: 2 },
+                        768: { slidesPerView: 3 },
+                        1024: { slidesPerView: 4 }
                     }
                 });
             }
         }
     };
 
-    /* ================= NOTABLE CASES FILTER ================= */
+    /* ================= NOTABLE CASES ================= */
     const NotableCases = {
         init() {
             const filters = Utils.$$('.case-filter');
@@ -247,14 +248,11 @@
                     filter.classList.add('active');
 
                     const category = filter.dataset.filter;
-
                     caseCards.forEach(card => {
-                        const cardCategory = card.dataset.category;
-                        if (category === 'all' || cardCategory === category) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
+                        card.style.display =
+                            category === 'all' || card.dataset.category === category
+                                ? 'block'
+                                : 'none';
                     });
                 });
             });
@@ -264,15 +262,15 @@
     /* ================= CASE SEARCH ================= */
     const CaseSearch = {
         init() {
-            const input = document.getElementById("caseSearch");
+            const input = Utils.$('#caseSearch');
             if (!input) return;
 
-            input.addEventListener("input", () => {
+            input.addEventListener('input', () => {
                 const query = input.value.toLowerCase();
-
-                document.querySelectorAll(".case-card").forEach(card => {
-                    const text = card.textContent.toLowerCase();
-                    card.style.display = text.includes(query) ? "block" : "none";
+                Utils.$$('.case-card').forEach(card => {
+                    card.style.display = card.textContent.toLowerCase().includes(query)
+                        ? 'block'
+                        : 'none';
                 });
             });
         }
@@ -293,11 +291,6 @@
                     return;
                 }
 
-                if (![...form.elements].every(el => !el.required || el.value.trim())) {
-                    alert('Please fill all required fields');
-                    return;
-                }
-
                 const btn = form.querySelector('button[type="submit"]');
                 btn.disabled = true;
                 btn.textContent = 'Sending...';
@@ -310,9 +303,7 @@
 
                     const res = await fetch('https://api.web3forms.com/submit', {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
+                        headers: { 'Content-Type': 'application/json' },
                         body
                     });
 
@@ -341,19 +332,16 @@
 
             const open = () => {
                 modal.classList.remove('hidden');
-                modal.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
             };
 
             const close = () => {
                 modal.classList.add('hidden');
-                modal.setAttribute('aria-hidden', 'true');
                 document.body.style.overflow = '';
             };
 
             Utils.$$('.consultation-btn').forEach(b => b.addEventListener('click', open));
             Utils.$('#modal-close')?.addEventListener('click', close);
-
             modal.addEventListener('click', e => e.target === modal && close());
             document.addEventListener('keydown', e => e.key === 'Escape' && close());
         }
@@ -393,18 +381,15 @@
         init() {
             const cards = Utils.$$('.testimonial-card');
             const nav = Utils.$('.testimonials-nav');
-
             if (!cards.length || !nav) return;
 
             let current = 0;
             let interval;
 
-            // Build nav dots
             nav.innerHTML = '';
             cards.forEach((_, i) => {
                 const btn = document.createElement('button');
-                btn.className = 'testimonial-nav-btn';
-                if (i === 0) btn.classList.add('active');
+                btn.className = 'testimonial-nav-btn' + (i === 0 ? ' active' : '');
                 btn.addEventListener('click', () => goTo(i));
                 nav.appendChild(btn);
             });
@@ -428,10 +413,9 @@
             }
 
             function start() {
-                interval = setInterval(next, AppConfig.carouselInterval || 4000);
+                interval = setInterval(next, AppConfig.carouselInterval);
             }
 
-            // Init
             show(0);
             start();
         }
