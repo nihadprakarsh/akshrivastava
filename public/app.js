@@ -41,6 +41,79 @@
             });
         },
 
+        prefersReducedMotion() {
+            return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        },
+
+        /**
+         * Eased scroll to an absolute Y.
+         *
+         * The native `behavior: 'smooth'` runs at a near-fixed duration whatever
+         * the distance, so a short hop to About feels right while Home to Contact
+         * covers ~10,000px in the same time and reads as a blur. Here the duration
+         * grows with the square root of the distance — longer journeys take longer,
+         * but not proportionally — and easing softens both ends.
+         */
+        scrollToY(targetY) {
+            if (this._scrollFrame) cancelAnimationFrame(this._scrollFrame);
+
+            const startY = window.scrollY;
+            const distance = Math.round(targetY) - startY;
+
+            if (this.prefersReducedMotion() || Math.abs(distance) < 4) {
+                window.scrollTo({ top: targetY, behavior: 'instant' });
+                return;
+            }
+
+            const duration = Math.min(1100, 320 + Math.sqrt(Math.abs(distance)) * 9);
+            const startTime = performance.now();
+            // Identifies this run: a queued frame that has already been dequeued
+            // cannot be cancelled, so it must notice it is stale and not re-arm.
+            const token = Symbol('scroll');
+            this._scrollToken = token;
+
+            // If the reader takes over mid-flight, get out of their way.
+            const stop = () => {
+                if (this._scrollFrame) cancelAnimationFrame(this._scrollFrame);
+                this._scrollFrame = null;
+                this._scrollToken = null;
+                release();
+            };
+            const opts = { passive: true };
+            const release = () => {
+                window.removeEventListener('wheel', stop, opts);
+                window.removeEventListener('touchstart', stop, opts);
+            };
+            window.addEventListener('wheel', stop, opts);
+            window.addEventListener('touchstart', stop, opts);
+
+            // easeInOutSine, deliberately not the cubic-bezier the CSS uses for
+            // hovers and reveals. Scrolling has a different requirement: a sharp
+            // curve peaks around 4x average velocity, and at the midpoint of a
+            // page-length jump that reads as a blur. Sine peaks at ~1.57x, so the
+            // travel stays near-constant and only the ends are eased.
+            const ease = t => -(Math.cos(Math.PI * t) - 1) / 2;
+
+            const step = now => {
+                if (this._scrollToken !== token) return release();   // cancelled or superseded
+
+                const t = Math.min((now - startTime) / duration, 1);
+                // 'instant' matters: html has scroll-behavior:smooth, which would
+                // otherwise re-animate every single frame of this animation.
+                window.scrollTo({ top: startY + distance * ease(t), behavior: 'instant' });
+
+                if (t < 1) {
+                    this._scrollFrame = requestAnimationFrame(step);
+                } else {
+                    this._scrollFrame = null;
+                    this._scrollToken = null;
+                    release();
+                }
+            };
+
+            this._scrollFrame = requestAnimationFrame(step);
+        },
+
         getTheme() {
             return localStorage.getItem('theme') || 'light';
         },
@@ -82,30 +155,21 @@
             navToggle?.addEventListener('click', () => navMenu.classList.add('show-menu'));
             navClose?.addEventListener('click', () => navMenu.classList.remove('show-menu'));
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', e => {
-                    const id = link.getAttribute('href');
-                    navMenu.classList.remove('show-menu');
+            // Every in-page anchor scrolls the same way — nav links, footer
+            // quick links and the hero docket link all land identically.
+            document.addEventListener('click', e => {
+                const link = e.target.closest('a[href^="#"]');
+                if (!link) return;
 
-                    if (!id || !id.startsWith('#')) return;
+                const id = link.getAttribute('href');
+                if (!id || id === '#') return;
 
-                    e.preventDefault();
-                    const target = Utils.$(id);
-                    if (!target) return;
+                const target = Utils.$(id);
+                if (!target) return;
 
-                    // Land on the section's heading, not its box: every section
-                    // carries ~130px of top padding, which otherwise leaves a
-                    // dead band under the fixed header on every jump.
-                    const heading = target.querySelector('.section-header');
-                    const anchorTop = heading
-                        ? heading.getBoundingClientRect().top + window.scrollY
-                        : target.offsetTop;
-
-                    window.scrollTo({
-                        top: Math.max(0, anchorTop - header.offsetHeight - 28),
-                        behavior: 'smooth'
-                    });
-                });
+                e.preventDefault();
+                navMenu.classList.remove('show-menu');
+                Utils.scrollToY(this.anchorFor(target, header));
             });
 
             let ticking = false;
@@ -119,6 +183,20 @@
                     ticking = true;
                 }
             });
+        },
+
+        /**
+         * Where a section should come to rest: on its heading, not its box.
+         * Each section carries ~130px of top padding, so scrolling to the box
+         * edge leaves a dead band under the fixed header.
+         */
+        anchorFor(target, header) {
+            const heading = target.querySelector('.section-header');
+            const top = heading
+                ? heading.getBoundingClientRect().top + window.scrollY
+                : target.getBoundingClientRect().top + window.scrollY;
+
+            return Math.max(0, top - header.offsetHeight - 28);
         },
 
         updateActive(links, offset) {
