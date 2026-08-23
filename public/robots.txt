@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-# No crawl traps on this site; everything is one indexable page.
+# Build output is not a served path; keep it out of the index.
 Disallow: /dist/
 
-Sitemap: https://www.legalaccess.in/sitemap.xml
+Sitemap: https://laymanslaw.in/sitemap.xml

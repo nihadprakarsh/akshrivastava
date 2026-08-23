@@ -3,7 +3,7 @@
  * case list in index.html. Copy here is descriptive of work already shown on
  * the site — it makes no claim of outcome and offers no legal advice.
  */
-export const SITE = 'https://www.legalaccess.in';
+export const SITE = 'https://laymanslaw.in';
 
 export const AREAS = [
    {

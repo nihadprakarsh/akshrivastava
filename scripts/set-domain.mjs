@@ -5,10 +5,25 @@
  * Run this once, before the first deploy. A canonical tag pointing at the
  * wrong host will keep the site out of Google's index.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 
 const PLACEHOLDER = 'https://www.legalaccess.in';
-const FILES = ['index.html', 'public/robots.txt', 'public/sitemap.xml'];
+
+// scripts/practice-areas.data.mjs holds the SITE constant the generator reads,
+// so it must be rewritten too — otherwise the next `npm run build:practice`
+// puts the placeholder straight back. Generated pages are patched in place so
+// an existing tree is correct without needing a regenerate.
+const FILES = [
+   'index.html',
+   'public/robots.txt',
+   'public/sitemap.xml',
+   'scripts/practice-areas.data.mjs',
+   ...(existsSync('practice')
+      ? readdirSync('practice', { withFileTypes: true })
+           .filter(e => e.isDirectory())
+           .map(e => `practice/${e.name}/index.html`)
+      : [])
+].filter(existsSync);
 
 const raw = process.argv[2];
 if (!raw) {
