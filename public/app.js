@@ -5,7 +5,7 @@
     const AppConfig = window.__APP_CONFIG__ || {
         carouselInterval: 5000,
         counterAnimationDuration: 2500,
-        loadingDuration: 1500,
+        loadingDuration: 450,
         web3FormsAccessKey: "f172d582-f61e-4dc1-ac3a-c144e252b0dd"
     };
 
@@ -93,8 +93,16 @@
                     const target = Utils.$(id);
                     if (!target) return;
 
+                    // Land on the section's heading, not its box: every section
+                    // carries ~130px of top padding, which otherwise leaves a
+                    // dead band under the fixed header on every jump.
+                    const heading = target.querySelector('.section-header');
+                    const anchorTop = heading
+                        ? heading.getBoundingClientRect().top + window.scrollY
+                        : target.offsetTop;
+
                     window.scrollTo({
-                        top: target.offsetTop - header.offsetHeight,
+                        top: Math.max(0, anchorTop - header.offsetHeight - 28),
                         behavior: 'smooth'
                     });
                 });
@@ -239,13 +247,15 @@
     const NotableCases = {
         init() {
             this.root = Utils.$('.notable-cases');
+            if (!this.root) return;          // pages without a case index
+
             this.grid = Utils.$('.cases-grid', this.root);
             this.overview = Utils.$('#caseOverview', this.root);
             this.filters = Utils.$$('.case-filter', this.root);
             this.searchInput = Utils.$('#caseSearch', this.root);
             this.cards = Utils.$$('.case-card', this.grid);
 
-            if (!this.root || !this.grid || !this.cards.length) return;
+            if (!this.grid || !this.cards.length) return;
 
             this.categories = [
                 {

@@ -1,29 +1,560 @@
 <!DOCTYPE html>
-<html lang="en" data-color-scheme="light">
+<html lang="en-IN" data-color-scheme="light">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Legal Access - Layman's Law - Premier Legal Excellence with 20+ years experience in Supreme Court, Corporate Law, IBC Appeals, and Human Rights. Expert representation across India's highest courts.">
-      <meta name="keywords" content="advocate, lawyer, supreme court, corporate law, IBC appeals, companies act appeals, writ article 32, human rights, legal services, india">
+
+      <!-- ==========================================================
+           SITE URL: every absolute URL below uses https://www.legalaccess.in
+           as a PLACEHOLDER. Before going live, replace it everywhere:
+             npm run seo:domain -- https://your-real-domain.in
+           (or find-and-replace "https://www.legalaccess.in" across
+            index.html, public/robots.txt and public/sitemap.xml)
+           A canonical tag pointing at the wrong host will de-index the
+           site, so do this before the first deploy.
+           ========================================================== -->
+
+      <title>Supreme Court Advocate | Legal Access, Jamshedpur &amp; Kolkata</title>
+      <meta name="description" content="30+ years before the Supreme Court, High Courts, NCLT &amp; NCLAT. Corporate, IBC, criminal, tax and human rights matters. Offices in Jamshedpur and Kolkata.">
+      <link rel="canonical" href="https://www.legalaccess.in/">
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
       <meta name="author" content="Advocate Akhilesh Shrivastava">
-      <meta property="og:title" content="Legal Access - Layman's Law - Premier Legal Excellence">
-      <meta property="og:description" content="20+ years of experience in Supreme Court litigation, Corporate Law, IBC Appeals, and Human Rights advocacy.">
+
+      <!-- Local signals -->
+      <meta name="geo.region" content="IN-JH">
+      <meta name="geo.placename" content="Jamshedpur, Jharkhand">
+      <meta name="ICBM" content="22.7960, 86.1844">
+
+      <!-- Open Graph -->
       <meta property="og:type" content="website">
-      <title>Legal Access - Layman's Law - Premier Legal Excellence | Supreme Court & Corporate Law</title>
+      <meta property="og:site_name" content="Legal Access &mdash; Layman&rsquo;s Law">
+      <meta property="og:locale" content="en_IN">
+      <meta property="og:url" content="https://www.legalaccess.in/">
+      <meta property="og:title" content="Supreme Court Advocate | Legal Access, Jamshedpur &amp; Kolkata">
+      <meta property="og:description" content="30+ years before the Supreme Court, High Courts, NCLT &amp; NCLAT. Corporate, IBC, criminal, tax and human rights matters. Offices in Jamshedpur and Kolkata.">
+      <meta property="og:image" content="https://www.legalaccess.in/assets/logo.png">
+      <meta property="og:image:width" content="1024">
+      <meta property="og:image:height" content="1024">
+      <meta property="og:image:alt" content="Legal Access &mdash; Layman&rsquo;s Law">
+
+      <!-- Twitter / X -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="Supreme Court Advocate | Legal Access, Jamshedpur &amp; Kolkata">
+      <meta name="twitter:description" content="30+ years before the Supreme Court, High Courts, NCLT &amp; NCLAT. Corporate, IBC, criminal, tax and human rights matters.">
+      <meta name="twitter:image" content="https://www.legalaccess.in/assets/logo.png">
+
+      <meta name="theme-color" content="#EFEAE2" media="(prefers-color-scheme: light)">
+      <meta name="theme-color" content="#070C15" media="(prefers-color-scheme: dark)">
+
+      <link rel="icon" href="assets/logo.png" type="image/png">
+      <link rel="apple-touch-icon" href="assets/logo.png">
+
       <script>
          (function () {
             var theme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-color-scheme', theme);
          })();
       </script>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
+      <link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,SOFT,WONK,wght@9..144,0..100,0..1,300..700&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
       <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
       <link rel="stylesheet" href="style.css">
+
+      <!-- Structured data: firm, both offices, founder, site and page. -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": [
+              "LegalService",
+              "Attorney"
+            ],
+            "@id": "https://www.legalaccess.in/#firm",
+            "name": "Legal Access — Layman's Law",
+            "alternateName": [
+              "A.K. Shrivastava & Associates",
+              "Legal Access"
+            ],
+            "description": "Advocates practising before the Supreme Court of India, High Courts, NCLT, NCLAT and tribunals, in corporate and company law, IBC, criminal defence, tax and excise, human rights and public interest litigation.",
+            "url": "https://www.legalaccess.in/",
+            "logo": {
+              "@id": "https://www.legalaccess.in/#logo"
+            },
+            "image": {
+              "@id": "https://www.legalaccess.in/#logo"
+            },
+            "email": "manakh25@gmail.com",
+            "telephone": "+91-33-4063-3220",
+            "foundingDate": "2004",
+            "priceRange": "$$",
+            "currenciesAccepted": "INR",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Dream Heights, 2nd Floor, South Park, Outer Circular Road, Bistupur",
+              "addressLocality": "Jamshedpur",
+              "addressRegion": "Jharkhand",
+              "postalCode": "831001",
+              "addressCountry": "IN"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "10:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "14:00"
+              }
+            ],
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "India"
+              },
+              {
+                "@type": "State",
+                "name": "Jharkhand"
+              },
+              {
+                "@type": "State",
+                "name": "West Bengal"
+              },
+              {
+                "@type": "State",
+                "name": "Delhi"
+              },
+              {
+                "@type": "State",
+                "name": "Bihar"
+              },
+              {
+                "@type": "State",
+                "name": "Odisha"
+              },
+              {
+                "@type": "State",
+                "name": "Assam"
+              },
+              {
+                "@type": "State",
+                "name": "Maharashtra"
+              },
+              {
+                "@type": "State",
+                "name": "Uttar Pradesh"
+              }
+            ],
+            "knowsLanguage": [
+              "en",
+              "hi",
+              "ta",
+              "ur"
+            ],
+            "knowsAbout": [
+              "Supreme Court litigation",
+              "Special Leave Petition",
+              "Writ petition under Article 32",
+              "Insolvency and Bankruptcy Code",
+              "NCLT",
+              "NCLAT",
+              "Companies Act appeals",
+              "Corporate law",
+              "Criminal defence",
+              "PMLA",
+              "UAPA",
+              "Bail applications",
+              "Income tax appeals",
+              "CESTAT",
+              "Service tax",
+              "Customs disputes",
+              "Human rights",
+              "NHRC",
+              "Public interest litigation",
+              "Constitutional law",
+              "Labour and industrial disputes"
+            ],
+            "founder": {
+              "@id": "https://www.legalaccess.in/#akhilesh"
+            },
+            "employee": [
+              {
+                "@id": "https://www.legalaccess.in/#akhilesh"
+              }
+            ],
+            "department": [
+              {
+                "@id": "https://www.legalaccess.in/#office-jamshedpur"
+              },
+              {
+                "@id": "https://www.legalaccess.in/#office-kolkata"
+              }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Practice areas",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Supreme Court Practice",
+                    "description": "Special Leave Petitions, writs under Article 32, constitutional matters and appeals from High Courts before the Supreme Court of India.",
+                    "serviceType": "Supreme Court Practice",
+                    "provider": {
+                      "@id": "https://www.legalaccess.in/#firm"
+                    },
+                    "areaServed": {
+                      "@type": "Country",
+                      "name": "India"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Corporate & Company Law",
+                    "description": "Corporate disputes, IBC matters, NCLT and NCLAT proceedings and company law litigation.",
+                    "serviceType": "Corporate & Company Law",
+                    "provider": {
+                      "@id": "https://www.legalaccess.in/#firm"
+                    },
+                    "areaServed": {
+                      "@type": "Country",
+                      "name": "India"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Appeals & Appellate Practice",
+                    "description": "Companies Act and IBC appeals across the Supreme Court, High Courts and tribunals.",
+                    "serviceType": "Appeals & Appellate Practice",
+                    "provider": {
+                      "@id": "https://www.legalaccess.in/#firm"
+                    },
+                    "areaServed": {
+                      "@type": "Country",
+                      "name": "India"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Criminal Law & Defense",
+                    "description": "Quashing of proceedings, bail applications, criminal appeals and white-collar crime defence.",
+                    "serviceType": "Criminal Law & Defense",
+                    "provider": {
+                      "@id": "https://www.legalaccess.in/#firm"
+                    },
+                    "areaServed": {
+                      "@type": "Country",
+                      "name": "India"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Tax & Excise Law",
+                    "description": "Income tax appeals, CESTAT proceedings, service tax matters and customs disputes.",
+                    "serviceType": "Tax & Excise Law",
+                    "provider": {
+                      "@id": "https://www.legalaccess.in/#firm"
+                    },
+                    "areaServed": {
+                      "@type": "Country",
+                      "name": "India"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Human Rights & PIL",
+                    "description": "NHRC complaints, public interest litigation, human rights violations and civil liberties.",
+                    "serviceType": "Human Rights & PIL",
+                    "provider": {
+                      "@id": "https://www.legalaccess.in/#firm"
+                    },
+                    "areaServed": {
+                      "@type": "Country",
+                      "name": "India"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://www.legalaccess.in/#logo",
+            "url": "https://www.legalaccess.in/assets/logo.png",
+            "width": 1024,
+            "height": 1024,
+            "caption": "Legal Access — Layman's Law"
+          },
+          {
+            "@type": [
+              "LegalService",
+              "Attorney"
+            ],
+            "@id": "https://www.legalaccess.in/#office-jamshedpur",
+            "name": "Legal Access — Layman's Law, Jamshedpur",
+            "branchOf": {
+              "@id": "https://www.legalaccess.in/#firm"
+            },
+            "parentOrganization": {
+              "@id": "https://www.legalaccess.in/#firm"
+            },
+            "url": "https://www.legalaccess.in/#contact",
+            "telephone": "+91-657-232-0342",
+            "email": "manakh25@gmail.com",
+            "image": {
+              "@id": "https://www.legalaccess.in/#logo"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Dream Heights, 2nd Floor, South Park, Outer Circular Road, Bistupur",
+              "addressLocality": "Jamshedpur",
+              "addressRegion": "Jharkhand",
+              "postalCode": "831001",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 22.796,
+              "longitude": 86.1844
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "10:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "14:00"
+              }
+            ],
+            "areaServed": [
+              {
+                "@type": "State",
+                "name": "Jharkhand"
+              },
+              {
+                "@type": "State",
+                "name": "Bihar"
+              },
+              {
+                "@type": "State",
+                "name": "Odisha"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "LegalService",
+              "Attorney"
+            ],
+            "@id": "https://www.legalaccess.in/#office-kolkata",
+            "name": "Legal Access — Layman's Law, Kolkata",
+            "branchOf": {
+              "@id": "https://www.legalaccess.in/#firm"
+            },
+            "parentOrganization": {
+              "@id": "https://www.legalaccess.in/#firm"
+            },
+            "url": "https://www.legalaccess.in/#contact",
+            "telephone": "+91-33-4063-3220",
+            "email": "manakh25@gmail.com",
+            "image": {
+              "@id": "https://www.legalaccess.in/#logo"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "9 Weston Street, Suite No. 312, 3rd Floor",
+              "addressLocality": "Kolkata",
+              "addressRegion": "West Bengal",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 22.5697,
+              "longitude": 88.352
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "10:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "14:00"
+              }
+            ],
+            "areaServed": [
+              {
+                "@type": "State",
+                "name": "West Bengal"
+              },
+              {
+                "@type": "State",
+                "name": "Assam"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "Person",
+              "Attorney"
+            ],
+            "@id": "https://www.legalaccess.in/#akhilesh",
+            "name": "Akhilesh Shrivastava",
+            "alternateName": "A. K. Shrivastava",
+            "honorificPrefix": "Advocate",
+            "jobTitle": "Founder & Managing Director",
+            "description": "Advocate with over 30 years of practice across company law, corporate law, taxation, human rights and constitutional law, appearing before the Supreme Court of India, High Courts, tribunals and appellate forums.",
+            "worksFor": {
+              "@id": "https://www.legalaccess.in/#firm"
+            },
+            "url": "https://www.legalaccess.in/#about",
+            "image": "https://www.legalaccess.in/assets/advocate-photo.jpg",
+            "knowsLanguage": [
+              "en",
+              "hi",
+              "ta",
+              "ur"
+            ],
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "LL.B",
+                "recognizedBy": {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Ranchi University"
+                }
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "B.Sc (Hons.) Chemistry",
+                "recognizedBy": {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Ranchi University"
+                }
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "professional certification",
+                "name": "Company Secretary (CS)",
+                "recognizedBy": {
+                  "@type": "Organization",
+                  "name": "Institute of Company Secretaries of India"
+                }
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "professional certification",
+                "name": "Cost and Works Accountant (CWA)",
+                "recognizedBy": {
+                  "@type": "Organization",
+                  "name": "Institute of Cost Accountants of India"
+                }
+              }
+            ],
+            "alumniOf": [
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "Ranchi University"
+              }
+            ],
+            "knowsAbout": [
+              "Constitutional law",
+              "Company law",
+              "Insolvency and Bankruptcy Code",
+              "Taxation",
+              "Human rights",
+              "PMLA",
+              "UAPA"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.legalaccess.in/#website",
+            "url": "https://www.legalaccess.in/",
+            "name": "Legal Access — Layman's Law",
+            "inLanguage": "en-IN",
+            "publisher": {
+              "@id": "https://www.legalaccess.in/#firm"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.legalaccess.in/#webpage",
+            "url": "https://www.legalaccess.in/",
+            "name": "Supreme Court Advocate | Legal Access, Jamshedpur & Kolkata",
+            "isPartOf": {
+              "@id": "https://www.legalaccess.in/#website"
+            },
+            "about": {
+              "@id": "https://www.legalaccess.in/#firm"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://www.legalaccess.in/#logo"
+            },
+            "inLanguage": "en-IN"
+          }
+        ]
+      }
+      </script>
    </head>
    <body>
       <div class="cursor-light-effect"></div>
       <div class="loading-screen" id="loading-screen">
          <div class="loading-animation">
-            <img src="assets/logo.png" alt="Legal Access Logo" class="loading-logo" loading="lazy">
+            <img src="assets/logo.png" alt="Legal Access — Layman’s Law" class="loading-logo" loading="eager" width="1024" height="1024" decoding="async" fetchpriority="high">
             <div class="loading-text">Welcome to Legal Access</div>
          </div>
       </div>
@@ -32,7 +563,7 @@
             <div class="nav__brand">
                <div class="logo-container">
                   <div class="logo-icon">
-                     <img src="assets/logo.png" alt="Logo" class="header-logo" loading="lazy">
+                     <img src="assets/logo.png" alt="Legal Access — Layman’s Law, advocates" class="header-logo" loading="eager" width="1024" height="1024" decoding="async" fetchpriority="high">
                   </div>
                   <div class="logo-text">
                      <h2 class="nav__logo">Legal Access - Layman's Law</h2>
@@ -41,6 +572,7 @@
                </div>
             </div>
             <div class="nav__menu" id="nav-menu">
+               <button class="nav__close" id="nav-close" aria-label="Close menu">&times;</button>
                <ul class="nav__list">
                   <li class="nav__item">
                      <a href="#home" class="nav__link active-link">Home</a>
@@ -85,48 +617,72 @@
       </header>
       <main>
          <section class="hero" id="home">
-            <div class="hero-background">
-            </div>
+            <div class="hero-background"></div>
             <div class="hero__container container">
                <div class="hero__content">
+                  <p class="hero__eyebrow">Legal Access &mdash; Layman&rsquo;s Law</p>
                   <h1 class="hero__title">
-                     Legal Access - Layman's Law
+                     Counsel before the <em>Supreme Court</em>, and every court on the way there.
                   </h1>
                   <p class="hero__description">
                      With over two decades of distinguished practice before the Supreme Court and High Courts of India, we provide robust representation and strategic guidance to navigate your most complex legal challenges. Our commitment is to deliver not just legal services, but decisive results.
                   </p>
                   <div class="hero__cta">
                      <button class="btn btn--primary btn--lg btn--glow consultation-btn">
-                     <span>Book a Consultation</span>
+                     <span>Book a consultation</span>
                      </button>
-                     <a href="#practice" class="btn btn--outline btn--lg btn--glass">Explore Practice Areas</a>
+                     <a href="#practice" class="btn btn--outline btn--lg btn--glass">Explore practice areas</a>
                   </div>
                   <div class="hero__stats">
                      <div class="stat-card glass-morphism">
                         <span class="stat-card__number" data-target="20">0</span>
                         <span class="stat-card__unit">+</span>
-                        <p class="stat-card__label">Years Experience</p>
+                        <p class="stat-card__label">Years in practice</p>
                      </div>
                      <div class="stat-card glass-morphism">
                         <span class="stat-card__number" data-target="500">0</span>
                         <span class="stat-card__unit">+</span>
-                        <p class="stat-card__label">Major Cases</p>
+                        <p class="stat-card__label">Matters argued</p>
                      </div>
                      <div class="stat-card glass-morphism">
                         <span class="stat-card__number" data-target="100">0</span>
                         <span class="stat-card__unit">+</span>
-                        <p class="stat-card__label">Corporate Clients</p>
+                        <p class="stat-card__label">Corporate clients</p>
                      </div>
                   </div>
                </div>
-               <div class="hero-image-container">
-                  <img src="assets/logo.png" alt="Advocate Akhilesh Shrivastava" class="hero-photo" loading="lazy">
-               </div>
+               <aside class="hero-image-container">
+                  <div class="hero-plate">
+                     <img src="assets/logo.png" alt="Legal Access &mdash; Layman&rsquo;s Law" class="hero-photo" width="1024" height="1024" decoding="async" loading="eager" fetchpriority="high">
+                  </div>
+                  <div class="hero-docket">
+                     <p class="hero-docket__label">From the cause list</p>
+                     <ul class="hero-docket__list">
+                        <li class="docket-line">
+                           <span class="docket-line__party">Sanjay Agarwal &amp; Ors. vs Meghalaya Finlease</span>
+                           <span class="docket-line__cite">Civil Appeal 8615/2017 &middot; Supreme Court of India</span>
+                        </li>
+                        <li class="docket-line">
+                           <span class="docket-line__party">Indica Composite Pvt. Ltd. vs Nand Kumar Singh</span>
+                           <span class="docket-line__cite">SLP (C) 12693/2018 &middot; Supreme Court of India</span>
+                        </li>
+                        <li class="docket-line">
+                           <span class="docket-line__party">Sokhi Engineering Co. vs Baldev Singh &amp; Ors.</span>
+                           <span class="docket-line__cite">Company Appeal 01/2014 &middot; Jharkhand High Court</span>
+                        </li>
+                        <li class="docket-line">
+                           <span class="docket-line__party">Incab Industries Ltd. Insolvency Appeal</span>
+                           <span class="docket-line__cite">CIRP resolution &middot; NCLAT, New Delhi</span>
+                        </li>
+                     </ul>
+                     <a href="#notable-cases" class="hero-docket__more">See all matters</a>
+                  </div>
+               </aside>
             </div>
          </section>
          <section class="about" id="about">
             <div class="container">
-               <div class="section-header">
+               <div class="section-header" data-label="Founder">
                   <h2 class="section__title">Founder Profile</h2>
                   <p class="section__subtitle">
                      Qualifications, practice areas, and courtroom experience of Advocate Akhilesh Shrivastava
@@ -154,22 +710,22 @@
                               </p>
                               <div class="highlights-grid">
                                  <div class="highlight-item">
-                                    <div class="highlight-icon">🏛️</div>
+                                    <div class="highlight-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18v-7M10 18v-7M14 18v-7M18 18v-7M3 22h18M2 10h20L12 3Z"/></svg></div>
                                     <h4>Supreme Court</h4>
                                     <p>SLPs, Appeals & Constitutional Matters</p>
                                  </div>
                                  <div class="highlight-item">
-                                    <div class="highlight-icon">📋</div>
+                                    <div class="highlight-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></svg></div>
                                     <h4>IBC & Companies Act</h4>
                                     <p>NCLT / NCLAT proceedings</p>
                                  </div>
                                  <div class="highlight-item">
-                                    <div class="highlight-icon">⚖️</div>
+                                    <div class="highlight-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
                                     <h4>Criminal Law</h4>
                                     <p>PMLA & UAPA matters</p>
                                  </div>
                                  <div class="highlight-item">
-                                    <div class="highlight-icon">✊</div>
+                                    <div class="highlight-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                                     <h4>Human Rights</h4>
                                     <p>NHRC & constitutional advocacy</p>
                                  </div>
@@ -177,31 +733,31 @@
                            </div>
                            <div class="credentials-grid">
                               <div class="credential-card glass-morphism">
-                                 <div class="credential-card__icon">🎓</div>
+                                 <div class="credential-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 2.8 9 2.8 12 0v-5"/></svg></div>
                                  <h4>LL.B</h4>
                                  <p>Ranchi University</p>
                                  <span class="credential-card__year">1990–1993</span>
                               </div>
                               <div class="credential-card glass-morphism">
-                                 <div class="credential-card__icon">📊</div>
+                                 <div class="credential-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7.5 17v-5M12 17V8M16.5 17v-8"/></svg></div>
                                  <h4>CS</h4>
                                  <p>ICSI</p>
                                  <span class="credential-card__year">1997–2002</span>
                               </div>
                               <div class="credential-card glass-morphism">
-                                 <div class="credential-card__icon">💼</div>
+                                 <div class="credential-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M2 13h20"/></svg></div>
                                  <h4>CWA</h4>
                                  <p>ICAI</p>
                                  <span class="credential-card__year">1991–1995</span>
                               </div>
                               <div class="credential-card glass-morphism">
-                                 <div class="credential-card__icon">🔬</div>
+                                 <div class="credential-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.31L5.2 17.6A2 2 0 0 0 6.94 20.6h10.12a2 2 0 0 0 1.74-3L14 9.31V2"/><path d="M8.5 2h7M7.2 15h9.6"/></svg></div>
                                  <h4>B.Sc (Hons.) Chemistry</h4>
                                  <p>Ranchi University</p>
                                  <span class="credential-card__year">1984–1987</span>
                               </div>
                               <div class="credential-card glass-morphism">
-                                 <div class="credential-card__icon">🗣️</div>
+                                 <div class="credential-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5a15 15 0 0 1 4 9.5 15 15 0 0 1-4 9.5 15 15 0 0 1-4-9.5 15 15 0 0 1 4-9.5z"/></svg></div>
                                  <h4>Certificate in Tamil & Urdu Languages</h4>
                                  <p>Language Proficiency</p>
                                  <span class="credential-card__year">Certified</span>
@@ -226,13 +782,13 @@
          </section>
          <section class="practice" id="practice">
             <div class="container">
-               <div class="section-header">
+               <div class="section-header" data-label="Practice">
                   <h2 class="section__title">Practice Areas</h2>
                   <p class="section__subtitle">Comprehensive legal services across multiple domains with specialized expertise</p>
                </div>
                <div class="practice-grid">
                   <div class="practice-card premium-card interactive-border">
-                     <div class="practice-card__icon">⚖️</div>
+                     <div class="practice-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
                      <h3>Supreme Court Practice</h3>
                      <p>Comprehensive representation in Special Leave Petitions, Constitutional matters, Appeals, and Writ under Article 32.</p>
                      <ul class="practice-card__services">
@@ -241,10 +797,10 @@
                         <li>Appeals from High Courts</li>
                         <li>Constitutional Matters</li>
                      </ul>
-                     <a href="#contact" class="practice-card__cta">Learn More &rarr;</a>
+                     <a href="/practice/supreme-court/" class="practice-card__cta">Read more &rarr;</a>
                   </div>
                   <div class="practice-card premium-card interactive-border">
-                     <div class="practice-card__icon">🏢</div>
+                     <div class="practice-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></div>
                      <h3>Corporate & Company Law</h3>
                      <p>Expert representation in corporate disputes, IBC matters, NCLT/NCLAT proceedings, and complex company law litigation.</p>
                      <ul class="practice-card__services">
@@ -253,10 +809,10 @@
                         <li>NCLT & NCLAT Representation</li>
                         <li>Corporate Restructuring</li>
                      </ul>
-                     <a href="#contact" class="practice-card__cta">Learn More &rarr;</a>
+                     <a href="/practice/corporate-company-law/" class="practice-card__cta">Read more &rarr;</a>
                   </div>
                   <div class="practice-card premium-card interactive-border">
-                     <div class="practice-card__icon">📜</div>
+                     <div class="practice-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg></div>
                      <h3>Appeals & Appellate Practice</h3>
                      <p>Specialized appellate practice including Companies Act & IBC appeals across Supreme Court, High Courts, and tribunals.</p>
                      <ul class="practice-card__services">
@@ -265,10 +821,10 @@
                         <li>High Court Appeals</li>
                         <li>Supreme Court Appeals</li>
                      </ul>
-                     <a href="#contact" class="practice-card__cta">Learn More &rarr;</a>
+                     <a href="/practice/appeals-appellate-practice/" class="practice-card__cta">Read more &rarr;</a>
                   </div>
                   <div class="practice-card premium-card interactive-border">
-                     <div class="practice-card__icon">🛡️</div>
+                     <div class="practice-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
                      <h3>Criminal Law & Defense</h3>
                      <p>Strategic criminal defense including quashing of proceedings, bail applications, and high-profile criminal matters.</p>
                      <ul class="practice-card__services">
@@ -277,10 +833,10 @@
                         <li>Criminal Appeals</li>
                         <li>White-collar Crime Defense</li>
                      </ul>
-                     <a href="#contact" class="practice-card__cta">Learn More &rarr;</a>
+                     <a href="/practice/criminal-law-defence/" class="practice-card__cta">Read more &rarr;</a>
                   </div>
                   <div class="practice-card premium-card interactive-border">
-                     <div class="practice-card__icon">💰</div>
+                     <div class="practice-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3a5 5 0 0 0 0-10"/></svg></div>
                      <h3>Tax & Excise Law</h3>
                      <p>Comprehensive representation in tax disputes, excise matters, and proceedings before CESTAT and tax tribunals.</p>
                      <ul class="practice-card__services">
@@ -289,10 +845,10 @@
                         <li>Service Tax Matters</li>
                         <li>Customs Disputes</li>
                      </ul>
-                     <a href="#contact" class="practice-card__cta">Learn More &rarr;</a>
+                     <a href="/practice/tax-excise-law/" class="practice-card__cta">Read more &rarr;</a>
                   </div>
                   <div class="practice-card premium-card interactive-border">
-                     <div class="practice-card__icon">✊</div>
+                     <div class="practice-card__icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                      <h3>Human Rights & PIL</h3>
                      <p>Extensive human rights advocacy with specialized focus on NHRC matters and public interest litigation.</p>
                      <ul class="practice-card__services">
@@ -301,14 +857,14 @@
                         <li>Human Rights Violations</li>
                         <li>Civil Liberties</li>
                      </ul>
-                     <a href="#contact" class="practice-card__cta">Learn More &rarr;</a>
+                     <a href="/practice/human-rights-pil/" class="practice-card__cta">Read more &rarr;</a>
                   </div>
                </div>
             </div>
          </section>
          <section class="team" id="team">
             <div class="container">
-               <div class="section-header">
+               <div class="section-header" data-label="Chambers">
                   <h2 class="section__title">Our Legal Team</h2>
                   <p class="section__subtitle">Distinguished professionals with exceptional expertise and dedication</p>
                </div>
@@ -531,7 +1087,7 @@
          </section>
          <section class="clients" id="clients">
             <div class="container">
-               <div class="section-header">
+               <div class="section-header" data-label="Clients">
                   <h2 class="section__title">Major Clients</h2>
                   <p class="section__subtitle">Trusted by leading corporations and organizations across diverse sectors</p>
                </div>
@@ -541,9 +1097,9 @@
                         <div class="client-card glass-morphism">
                            <div class="client-logo">
                               <img src="assets/logos/rungta.jpeg"
-                                 alt="Rungta Mines Limited Logo">
+                                 alt="Rungta Mines Limited Logo" width="200" height="200" decoding="async" loading="lazy">
                            </div>
-                           <h4>Rungta Mines Limited</h4>
+                           <h3 class="client-name">Rungta Mines Limited</h3>
                            <p class="client-sector">Mining & Minerals</p>
                            <span class="client-since">Since 2015</span>
                         </div>
@@ -552,17 +1108,17 @@
                         <div class="client-card glass-morphism">
                            <div class="client-logo">
                               <img src="assets/logos/p&m.jpeg"
-                                 alt="P&M and Hi Tech Infrastructure LLP Logo">
+                                 alt="P&M and Hi Tech Infrastructure LLP Logo" width="225" height="225" decoding="async" loading="lazy">
                            </div>
-                           <h4>P&amp;M and Hi Tech Infrastructure LLP</h4>
+                           <h3 class="client-name">P&amp;M and Hi Tech Infrastructure LLP</h3>
                            <p class="client-sector">Infrastructure</p>
                            <span class="client-since">Since 2021</span>
                         </div>
                      </div>
                      <div class="swiper-slide">
                         <div class="client-card glass-morphism">
-                           <div class="client-logo">🏛️</div>
-                           <h4>Hi Tech Heritage Limited</h4>
+                           <div class="client-logo"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18v-7M10 18v-7M14 18v-7M18 18v-7M3 22h18M2 10h20L12 3Z"/></svg></div>
+                           <h3 class="client-name">Hi Tech Heritage Limited</h3>
                            <p class="client-sector">Real Estate</p>
                            <span class="client-since">Since 2022</span>
                         </div>
@@ -571,9 +1127,9 @@
                         <div class="client-card glass-morphism">
                            <div class="client-logo">
                               <img src="assets/logos/prowess.jpeg"
-                                 alt="Prowess International Private Limited Logo">
+                                 alt="Prowess International Private Limited Logo" width="200" height="200" decoding="async" loading="lazy">
                            </div>
-                           <h4>Prowess International Private Limited</h4>
+                           <h3 class="client-name">Prowess International Private Limited</h3>
                            <p class="client-sector">International Trade</p>
                            <span class="client-since">Since 2023</span>
                         </div>
@@ -582,9 +1138,9 @@
                         <div class="client-card glass-morphism">
                            <div class="client-logo">
                               <img src="assets/logos/etravels.png"
-                                 alt="Eastern Travels Private Limited Logo">
+                                 alt="Eastern Travels Private Limited Logo" width="225" height="225" decoding="async" loading="lazy">
                            </div>
-                           <h4>Eastern Travels (P) Limited</h4>
+                           <h3 class="client-name">Eastern Travels (P) Limited</h3>
                            <p class="client-sector">Travel & Tourism</p>
                            <span class="client-since">Since 2024</span>
                         </div>
@@ -593,9 +1149,9 @@
                         <div class="client-card glass-morphism">
                            <div class="client-logo">
                               <img src="assets/logos/sahara.jpg"
-                                 alt="Sahara Investors Logo">
+                                 alt="Sahara Investors Logo" width="1500" height="900" decoding="async" loading="lazy">
                            </div>
-                           <h4>Sahara Investors</h4>
+                           <h3 class="client-name">Sahara Investors</h3>
                            <p class="client-sector">Finance – Supreme Court</p>
                            <span class="client-since">Since 2024</span>
                         </div>
@@ -603,17 +1159,17 @@
                      <div class="swiper-slide">
                         <div class="client-card glass-morphism">
                            <div class="client-logo">
-                              <img src="assets/logos/birla-tyres.jpg" alt="Birla Tyres Logo">
+                              <img src="assets/logos/birla-tyres.jpg" alt="Birla Tyres Logo" width="1200" height="675" decoding="async" loading="lazy">
                            </div>
-                           <h4>Birla Tyres</h4>
+                           <h3 class="client-name">Birla Tyres</h3>
                            <p class="client-sector">Manufacturing</p>
                            <span class="client-since">Since 2023</span>
                         </div>
                      </div>
                      <div class="swiper-slide">
                         <div class="client-card glass-morphism">
-                           <div class="client-logo">🏥</div>
-                           <h4>Paramount Hospital Pvt. Ltd.</h4>
+                           <div class="client-logo"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg></div>
+                           <h3 class="client-name">Paramount Hospital Pvt. Ltd.</h3>
                            <p class="client-sector">Healthcare</p>
                            <span class="client-since">Since 2023</span>
                         </div>
@@ -622,17 +1178,17 @@
                         <div class="client-card glass-morphism">
                            <div class="client-logo">
                               <img src="assets/logos/incab.jpeg"
-                                 alt="Incab Industries Limited Logo">
+                                 alt="Incab Industries Limited Logo" width="225" height="225" decoding="async" loading="lazy">
                            </div>
-                           <h4>Incab Industries Limited</h4>
+                           <h3 class="client-name">Incab Industries Limited</h3>
                            <p class="client-sector">Industrial – NCLT / NCLAT</p>
                            <span class="client-since">Since 2019</span>
                         </div>
                      </div>
                      <div class="swiper-slide">
                         <div class="client-card glass-morphism">
-                           <div class="client-logo">🍃</div>
-                           <h4>Tezalpatti Tea Private Ltd</h4>
+                           <div class="client-logo"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+                           <h3 class="client-name">Tezalpatti Tea Private Ltd</h3>
                            <p class="client-sector">Tea Industry</p>
                            <span class="client-since">Since 2020</span>
                         </div>
@@ -641,9 +1197,9 @@
                         <div class="client-card glass-morphism">
                            <div class="client-logo">
                               <img src="assets/logos/tata.png"
-                                 alt="TATA Group Companies Logo">
+                                 alt="TATA Group Companies Logo" width="1900" height="1410" decoding="async" loading="lazy">
                            </div>
-                           <h4>TATA Group Companies</h4>
+                           <h3 class="client-name">TATA Group Companies</h3>
                            <p class="client-sector">Conglomerate</p>
                            <span class="client-since">Since 2006</span>
                         </div>
@@ -652,9 +1208,9 @@
                         <div class="client-card glass-morphism">
                            <div class="client-logo">
                               <img src="assets/logos/sbi.png"
-                                 alt="State Bank of India Logo">
+                                 alt="State Bank of India Logo" width="225" height="225" decoding="async" loading="lazy">
                            </div>
-                           <h4>State Bank of India</h4>
+                           <h3 class="client-name">State Bank of India</h3>
                            <p class="client-sector">Banking</p>
                            <span class="client-since">Since 2006</span>
                         </div>
@@ -680,7 +1236,7 @@
          </section>
          <section class="experience" id="experience">
             <div class="container">
-               <div class="section-header">
+               <div class="section-header" data-label="Record">
                   <h2 class="section__title">Professional Journey</h2>
                   <p class="section__subtitle">20+ years of dedicated legal practice and excellence</p>
                </div>
@@ -722,7 +1278,7 @@
          </section>
          <section class="notable-cases" id="notable-cases">
             <div class="container">
-               <div class="section-header">
+               <div class="section-header" data-label="Matters">
                   <h2 class="section__title">Notable Cases</h2>
                   <p class="section__subtitle">
                      A selection of landmark and high-impact matters argued across India’s highest judicial forums
@@ -1548,7 +2104,7 @@
          </section>
          <!-- <section class="testimonials" id="testimonials">
             <div class="container">
-               <div class="section-header">
+               <div class="section-header" data-label="In their words">
                   <h2 class="section__title">Client Testimonials</h2>
                   <p class="section__subtitle">Success stories and client experiences</p>
                </div>
@@ -1604,7 +2160,7 @@
             </section> -->
          <section class="testimonials" id="testimonials">
             <div class="container">
-               <div class="section-header">
+               <div class="section-header" data-label="In their words">
                   <h2 class="section__title">Client Testimonials</h2>
                   <p class="section__subtitle">Selected client feedback across Supreme Court, tribunal, labour, tax, and corporate matters</p>
                </div>
@@ -1706,14 +2262,14 @@
          </section>
          <section class="contact" id="contact">
             <div class="container">
-               <div class="section-header">
+               <div class="section-header" data-label="Consult">
                   <h2 class="section__title">Get in Touch</h2>
                   <p class="section__subtitle">Schedule a consultation to discuss your legal needs</p>
                </div>
                <div class="contact-content">
                   <div class="contact-info">
                      <div class="contact-item glass-morphism">
-                        <div class="contact-icon">🏢</div>
+                        <div class="contact-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
                         <h3>Jamshedpur Office</h3>
                         <br>
                         <p>Dream Heights, 2nd Floor,
@@ -1725,7 +2281,7 @@
                         </p>
                      </div>
                      <div class="contact-item glass-morphism">
-                        <div class="contact-icon">🏢</div>
+                        <div class="contact-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
                         <h3>Kolkata Office</h3>
                         <br>
                         <p> 9, Weston Street, Suit No.312, 3rd Floor
@@ -1735,14 +2291,14 @@
                         </p>
                      </div>
                      <div class="contact-item glass-morphism">
-                        <div class="contact-icon">📞</div>
+                        <div class="contact-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
                         <h3>Contact Details</h3>
                         <br>
                         <p><strong>Phone:</strong> <a href="tel:+91-033-40633220">+91-033-40633220</a></p>
                         <p><strong>Email:</strong> <a href="manakh25@gmail.com">manakh25@gmail.com</a></p>
                      </div>
                      <div class="contact-item glass-morphism">
-                        <div class="contact-icon">⏰</div>
+                        <div class="contact-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/></svg></div>
                         <h3>Office Hours</h3>
                         <br>
                         <p>Monday - Friday: 10:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
@@ -1816,11 +2372,11 @@
                <div class="footer-section">
                   <h4>Practice Areas</h4>
                   <ul>
-                     <li>Supreme Court Practice</li>
-                     <li>Corporate & Company Law</li>
-                     <li>Appeals & Appellate Practice</li>
-                     <li>Criminal Law & Defense</li>
-                     <li>Human Rights & PIL</li>
+                     <li><a href="/practice/supreme-court/">Supreme Court Practice</a></li>
+                     <li><a href="/practice/corporate-company-law/">Corporate &amp; Company Law</a></li>
+                     <li><a href="/practice/appeals-appellate-practice/">Appeals &amp; Appellate Practice</a></li>
+                     <li><a href="/practice/criminal-law-defence/">Criminal Law &amp; Defense</a></li>
+                     <li><a href="/practice/human-rights-pil/">Human Rights &amp; PIL</a></li>
                   </ul>
                </div>
                <div class="footer-section">

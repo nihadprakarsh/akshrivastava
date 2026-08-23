@@ -1,0 +1,8 @@
+# Legal Access — Layman's Law
+User-agent: *
+Allow: /
+
+# No crawl traps on this site; everything is one indexable page.
+Disallow: /dist/
+
+Sitemap: https://www.legalaccess.in/sitemap.xml
