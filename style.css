@@ -781,7 +781,7 @@ main > section { position: relative; padding-block: var(--section-y); }
 /* ---------- 10. Team ---------- */
 .team-carousel-wrapper { position: relative; }
 
-.team-card { perspective: 1600px; height: 26rem; }
+.team-card { perspective: 1600px; height: 27.5rem; }
 
 .team-card__inner {
    position: relative;
